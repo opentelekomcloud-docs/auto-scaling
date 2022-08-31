@@ -80,7 +80,7 @@ html_theme_options = {
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
 
-html_title = "Auto Scaling - User Guide"
+html_title = "Auto Scaling - Developer Guide"
 
 
 # Add any paths that contain custom static files (such as style sheets) here,
@@ -91,7 +91,7 @@ html_static_path = ['_static']
 # -- Options for PDF output --------------------------------------------------
 latex_documents = [
 ('index',
-     'as-umn.tex',
-     u'Auto Scaling - User Guide',
+     'as-dev-guide.tex',
+     u'Auto Scaling - Developer Guide',
      u'OpenTelekomCloud', 'manual'),
 ]
