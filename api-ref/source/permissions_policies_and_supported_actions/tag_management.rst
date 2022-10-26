@@ -8,11 +8,11 @@ Tag Management
 +-----------------------------+---------------------------------------------------------------------------------+----------------------+-------------+--------------------+
 | Permission                  | APIs                                                                            | Actions              | IAM Project | Enterprise Project |
 +=============================+=================================================================================+======================+=============+====================+
-| Querying tags               | GET /autoscaling-api/v1/{project_id}/{resource_type}/tags                       | as:tags:list         | Y           | ×                  |
+| Querying tags               | GET /autoscaling-api/v1/{project_id}/{resource_type}/tags                       | as:tags:list         | Y           | x                  |
 +-----------------------------+---------------------------------------------------------------------------------+----------------------+-------------+--------------------+
-| Querying tags of a resource | GET /autoscaling-api/v1/{project_id}/{resource_type}/{resource_id}/tags         | as:tags:get          | Y           | ×                  |
+| Querying tags of a resource | GET /autoscaling-api/v1/{project_id}/{resource_type}/{resource_id}/tags         | as:tags:get          | Y           | x                  |
 +-----------------------------+---------------------------------------------------------------------------------+----------------------+-------------+--------------------+
-| Updating or deleting a tag  | POST /autoscaling-api/v1/{project_id}/{resource_type}/{resource_id}/tags/action | as:tags:set          | Y           | ×                  |
+| Updating or deleting a tag  | POST /autoscaling-api/v1/{project_id}/{resource_type}/{resource_id}/tags/action | as:tags:set          | Y           | x                  |
 +-----------------------------+---------------------------------------------------------------------------------+----------------------+-------------+--------------------+
-| Querying resources          | POST /autoscaling-api/v1/{project_id}/{resource_type}/resource_instances/action | as:tagResources:list | Y           | ×                  |
+| Querying resources          | POST /autoscaling-api/v1/{project_id}/{resource_type}/resource_instances/action | as:tagResources:list | Y           | x                  |
 +-----------------------------+---------------------------------------------------------------------------------+----------------------+-------------+--------------------+
