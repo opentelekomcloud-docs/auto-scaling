@@ -93,7 +93,7 @@ html_static_path = ['_static']
 
 # -- Options for PDF output --------------------------------------------------
 latex_documents = [
-('index',
+    ('index',
      'as-dev-guide.tex',
      u'Auto Scaling - Developer Guide',
      u'OpenTelekomCloud', 'manual'),
