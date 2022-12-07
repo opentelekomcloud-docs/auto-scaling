@@ -11,11 +11,11 @@ Parameter description
 
 .. table:: **Table 1** Response parameter
 
-   +-----------+----------------------------------------------------------------------------+----------------------------+
-   | Parameter | Type                                                                       | Description                |
-   +===========+============================================================================+============================+
-   | vpcs      | Array of :ref:`vpcs <en-us_topic_0110252686__table15235118194511>` objects | Specifies the VPC objects. |
-   +-----------+----------------------------------------------------------------------------+----------------------------+
+   +-----------+----------------------------------------------------------------------------+---------------------+
+   | Parameter | Type                                                                       | Description         |
+   +===========+============================================================================+=====================+
+   | vpcs      | Array of :ref:`vpcs <en-us_topic_0110252686__table15235118194511>` objects | Specifies the VPCs. |
+   +-----------+----------------------------------------------------------------------------+---------------------+
 
 Descriptions of **vpcs** fields
 
@@ -29,18 +29,18 @@ Descriptions of **vpcs** fields
    | id                    | String                                                                     | Specifies a resource ID in UUID format.                                                                                                                                               |
    +-----------------------+----------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | name                  | String                                                                     | -  Specifies the VPC name.                                                                                                                                                            |
-   |                       |                                                                            | -  The value is a string of no more than 64 characters that can contain letters, digits, underscores (_), hyphens (-), and periods (.).                                               |
+   |                       |                                                                            | -  The value can contain no more than 64 characters, including letters, digits, underscores (_), hyphens (-), and periods (.).                                                        |
    |                       |                                                                            | -  Each VPC name of a tenant must be unique if the VPC name is not left blank.                                                                                                        |
    +-----------------------+----------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | description           | String                                                                     | -  Provides supplementary information about the VPC.                                                                                                                                  |
-   |                       |                                                                            | -  The value is a string of no more than 255 characters and cannot contain angle brackets (< or >).                                                                                   |
+   |                       |                                                                            | -  The value can contain no more than 255 characters and cannot contain angle brackets (< or >).                                                                                      |
    +-----------------------+----------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | cidr                  | String                                                                     | -  Specifies the available IP address ranges for subnets in the VPC.                                                                                                                  |
    |                       |                                                                            | -  Possible values are as follows:                                                                                                                                                    |
    |                       |                                                                            |                                                                                                                                                                                       |
-   |                       |                                                                            |    -  10.0.0.0/8~24                                                                                                                                                                   |
-   |                       |                                                                            |    -  172.16.0.0/12~24                                                                                                                                                                |
-   |                       |                                                                            |    -  192.168.0.0/16~24                                                                                                                                                               |
+   |                       |                                                                            |    -  10.0.0.0/8-24                                                                                                                                                                   |
+   |                       |                                                                            |    -  172.16.0.0/12-24                                                                                                                                                                |
+   |                       |                                                                            |    -  192.168.0.0/16-24                                                                                                                                                               |
    |                       |                                                                            |                                                                                                                                                                                       |
    |                       |                                                                            | -  If **cidr** is not specified, the default value is left blank.                                                                                                                     |
    |                       |                                                                            | -  The value must be in CIDR format, for example, **192.168.0.0/16**.                                                                                                                 |
