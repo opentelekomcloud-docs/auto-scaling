@@ -161,7 +161,7 @@ Parameter description
                "min_instance_number": 0,
                "max_instance_number": 500,
                "cool_down_time": 300,
-               "lb_listener_id": "f06c0112570743b51c0e8fbe1f235bab",
+               "lb_listener_id": null,
                "security_groups": [
                    {
                        "id": "8a4b1d5b-0054-419f-84b1-5c8a59ebc829"
@@ -180,6 +180,8 @@ Parameter description
                ]
               "enterprise_project_id": "c92b1a5d-6f20-43f2-b1b7-7ce35e58e413",
                "multi_az_priority_policy": "PICK_FIRST"
+
+
            }
        ],
        "total_number": 1,
