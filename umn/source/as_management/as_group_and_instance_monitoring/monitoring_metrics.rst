@@ -1,0 +1,77 @@
+:original_name: as_06_0105.html
+
+.. _as_06_0105:
+
+Monitoring Metrics
+==================
+
+:ref:`Table 1 <as_06_0105__en-us_topic_0042018317_table57136275115435>` lists the AS metrics supported by Cloud Eye.
+
+.. _as_06_0105__en-us_topic_0042018317_table57136275115435:
+
+.. table:: **Table 1** AS metrics
+
+   +------------------------------------+----------------------+------------------------------------------------------------------------------------------------------------------+---------------+------------------+--------------------------------+
+   | Metric ID                          | Metric               | Description                                                                                                      | Value Range   | Monitored Object | Monitoring Interval (Raw Data) |
+   +====================================+======================+==================================================================================================================+===============+==================+================================+
+   | cpu_util                           | CPU Usage            | CPU usage of an AS group                                                                                         | >=0%          | AS group         | 5 minutes                      |
+   |                                    |                      |                                                                                                                  |               |                  |                                |
+   |                                    |                      | Formula: Total CPU usage of all ECS instances in an AS group/Number of ECS instances in the AS group             |               |                  |                                |
+   |                                    |                      |                                                                                                                  |               |                  |                                |
+   |                                    |                      | Unit: Percent                                                                                                    |               |                  |                                |
+   +------------------------------------+----------------------+------------------------------------------------------------------------------------------------------------------+---------------+------------------+--------------------------------+
+   | mem_util                           | Memory Usage         | Memory usage of an AS group                                                                                      | >=0%          | AS group         | 5 minutes                      |
+   |                                    |                      |                                                                                                                  |               |                  |                                |
+   |                                    |                      | Formula: Total memory usage of all ECS instances in an AS group/Number of ECS instances in the AS group          |               |                  |                                |
+   |                                    |                      |                                                                                                                  |               |                  |                                |
+   |                                    |                      | Unit: Percent                                                                                                    |               |                  |                                |
+   |                                    |                      |                                                                                                                  |               |                  |                                |
+   |                                    |                      | .. note::                                                                                                        |               |                  |                                |
+   |                                    |                      |                                                                                                                  |               |                  |                                |
+   |                                    |                      |    This metric is unavailable if the image has no OTC Tools installed.                                           |               |                  |                                |
+   +------------------------------------+----------------------+------------------------------------------------------------------------------------------------------------------+---------------+------------------+--------------------------------+
+   | instance_num                       | Number of Instances  | Number of available ECS instances in an AS group                                                                 | >=0           | AS group         | 5 minutes                      |
+   |                                    |                      |                                                                                                                  |               |                  |                                |
+   |                                    |                      | Formula: Total number of ECS instances in **Enabled** state in the AS group                                      |               |                  |                                |
+   +------------------------------------+----------------------+------------------------------------------------------------------------------------------------------------------+---------------+------------------+--------------------------------+
+   | network_incoming_bytes_rate_inband | Inband Incoming Rate | Number of incoming bytes per second on an ECS in an AS group                                                     | >=0 Byte/s    | AS group         | 5 minutes                      |
+   |                                    |                      |                                                                                                                  |               |                  |                                |
+   |                                    |                      | Formula: Total inband incoming rates of all ECS instances in an AS group/Number of ECS instances in the AS group |               |                  |                                |
+   |                                    |                      |                                                                                                                  |               |                  |                                |
+   |                                    |                      | Unit: Byte/s                                                                                                     |               |                  |                                |
+   +------------------------------------+----------------------+------------------------------------------------------------------------------------------------------------------+---------------+------------------+--------------------------------+
+   | network_outgoing_bytes_rate_inband | Inband Outgoing Rate | Number of outgoing bytes per second on an ECS in an AS group                                                     | >=0 Byte/s    | AS group         | 5 minutes                      |
+   |                                    |                      |                                                                                                                  |               |                  |                                |
+   |                                    |                      | Formula: Total inband outgoing rates of all ECS instances in an AS group/Number of ECS instances in the AS group |               |                  |                                |
+   |                                    |                      |                                                                                                                  |               |                  |                                |
+   |                                    |                      | Unit: Byte/s                                                                                                     |               |                  |                                |
+   +------------------------------------+----------------------+------------------------------------------------------------------------------------------------------------------+---------------+------------------+--------------------------------+
+   | disk_read_bytes_rate               | Disks Read Rate      | Number of bytes read from an AS group per second                                                                 | >=0 Byte/s    | AS group         | 5 minutes                      |
+   |                                    |                      |                                                                                                                  |               |                  |                                |
+   |                                    |                      | Formula: Total disks read rates of all ECS instances in an AS group/Number of ECS instances in the AS group      |               |                  |                                |
+   |                                    |                      |                                                                                                                  |               |                  |                                |
+   |                                    |                      | Unit: Byte/s                                                                                                     |               |                  |                                |
+   +------------------------------------+----------------------+------------------------------------------------------------------------------------------------------------------+---------------+------------------+--------------------------------+
+   | disk_write_bytes_rate              | Disks Write Rate     | Number of bytes written to an AS group per second                                                                | >=0 Byte/s    | AS group         | 5 minutes                      |
+   |                                    |                      |                                                                                                                  |               |                  |                                |
+   |                                    |                      | Formula: Total disks write rates of all ECS instances in an AS group/Number of ECS instances in the AS group     |               |                  |                                |
+   |                                    |                      |                                                                                                                  |               |                  |                                |
+   |                                    |                      | Unit: Byte/s                                                                                                     |               |                  |                                |
+   +------------------------------------+----------------------+------------------------------------------------------------------------------------------------------------------+---------------+------------------+--------------------------------+
+   | disk_read_requests_rate            | Disks Read Requests  | Number of read requests per second sent to an ECS disk in an AS group                                            | >=0 request/s | AS group         | 5 minutes                      |
+   |                                    |                      |                                                                                                                  |               |                  |                                |
+   |                                    |                      | Formula: Total disks read rates of all ECS instances in an AS group/Number of ECS instances in the AS group      |               |                  |                                |
+   |                                    |                      |                                                                                                                  |               |                  |                                |
+   |                                    |                      | Unit: Request/s                                                                                                  |               |                  |                                |
+   +------------------------------------+----------------------+------------------------------------------------------------------------------------------------------------------+---------------+------------------+--------------------------------+
+   | disk_write_requests_rate           | Disks Write Requests | Number of write requests per second sent to an ECS disk in an AS group                                           | >=0 request/s | AS group         | 5 minutes                      |
+   |                                    |                      |                                                                                                                  |               |                  |                                |
+   |                                    |                      | Formula: Total disks write rates of all ECS instances in an AS group/Number of ECS instances in the AS group     |               |                  |                                |
+   |                                    |                      |                                                                                                                  |               |                  |                                |
+   |                                    |                      | Unit: Request/s                                                                                                  |               |                  |                                |
+   +------------------------------------+----------------------+------------------------------------------------------------------------------------------------------------------+---------------+------------------+--------------------------------+
+
+.. note::
+
+   -  The image based on which the target ECS is created must have OTC Tools installed. Otherwise, **Memory Usage** will be unavailable. For details about how to install the OTC Tools, visit https://github.com/UVP-Tools/UVP-Tools/.
+   -  OSs determine whether the **Memory Usage**, **Inband Outgoing Rate**, and **Inband Incoming Rate** metrics are supported. For details, see `Elastic Cloud Server User Guide <https://docs.otc.t-systems.com/en-us/usermanual/ecs/en-us_topic_0030911465.html>`__.
