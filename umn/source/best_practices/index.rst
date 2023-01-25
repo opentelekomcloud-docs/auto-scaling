@@ -11,4 +11,4 @@ Best Practices
    :maxdepth: 1
    :hidden: 
 
-   setting_up_an_automatically_scalable_discuz!_forum
+   setting_up_an_automatically_scalable_discuz_forum
