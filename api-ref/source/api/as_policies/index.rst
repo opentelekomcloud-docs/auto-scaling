@@ -31,6 +31,6 @@ AS Policies
    querying_all_as_policies_v2
    querying_as_policy_details
    querying_details_of_an_as_policy_v2
-   executing,_enabling,_or_disabling_an_as_policy
+   executing_enabling_or_disabling_an_as_policy
    deleting_an_as_policy
    performing_operations_on_as_policies_in_batches
