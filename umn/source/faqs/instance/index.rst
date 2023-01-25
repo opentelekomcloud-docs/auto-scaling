@@ -20,7 +20,7 @@ Instance
    :hidden: 
 
    how_do_i_prevent_instances_manually_added_to_an_as_group_from_being_automatically_removed
-   when_an_instance_is_removed_from_an_as_group_and_deleted,_is_the_application_data_saved
+   when_an_instance_is_removed_from_an_as_group_and_deleted_is_the_application_data_saved
    can_as_automatically_delete_instances_added_based_on_an_as_policy_when_they_are_not_required
    what_is_the_expected_number_of_instances
    how_do_i_delete_an_ecs_instance_created_in_a_scaling_action
