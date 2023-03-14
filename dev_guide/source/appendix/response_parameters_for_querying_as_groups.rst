@@ -23,7 +23,7 @@ Parameter description
    | scaling_groups | Array of :ref:`scaling_groups <en-us_topic_0110252693__table0776165654612>` objects | Specifies the scaling group list.                        |
    +----------------+-------------------------------------------------------------------------------------+----------------------------------------------------------+
 
-**scaling_groups** field data structure description
+**scaling_groups** field description
 
 .. _en-us_topic_0110252693__table0776165654612:
 
@@ -58,7 +58,7 @@ Parameter description
    +------------------------------------+-----------------------+------------------------------------------------------------------------------------------------------------------------+
    | available_zones                    | List<String>          | Specifies the AZ information.                                                                                          |
    +------------------------------------+-----------------------+------------------------------------------------------------------------------------------------------------------------+
-   | networks                           | List data structure   | Specifies the network information. For details, see :ref:`Table 4 <en-us_topic_0110252693__table1545916919489>`.       |
+   | networks                           | List data structure   | Specifies the network information. For details, see :ref:`Table 4 <en-us_topic_0110252693__table1073916213513>`.       |
    +------------------------------------+-----------------------+------------------------------------------------------------------------------------------------------------------------+
    | security_groups                    | List data structure   | Specifies the security group information. For details, see :ref:`Table 5 <en-us_topic_0110252693__table570123513488>`. |
    +------------------------------------+-----------------------+------------------------------------------------------------------------------------------------------------------------+
@@ -90,8 +90,10 @@ Parameter description
    +------------------------------------+-----------------------+------------------------------------------------------------------------------------------------------------------------+
    | activity_type                      | String                | Specifies the type of the scaling action.                                                                              |
    +------------------------------------+-----------------------+------------------------------------------------------------------------------------------------------------------------+
+   | multi_az_priority_policy           | String                | Specifies the priority policy used to select the target AZ when adjusting the number of instances in an AS group.      |
+   +------------------------------------+-----------------------+------------------------------------------------------------------------------------------------------------------------+
 
-**lbaas_listeners** field data structure description
+**lbaas_listeners** field description
 
 .. table:: **Table 3** **lbaas_listeners** field description
 
@@ -107,19 +109,23 @@ Parameter description
    | weight        | Integer | Specifies the weight, which determines the portion of requests a backend ECS processes when being compared to other backend ECSs added to the same listener. |
    +---------------+---------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-**networks** field data structure description
+**networks** field description
 
-.. _en-us_topic_0110252693__table1545916919489:
+.. _en-us_topic_0110252693__table1073916213513:
 
 .. table:: **Table 4** **networks** field description
 
-   ========= ====== ========================
-   Parameter Type   Description
-   ========= ====== ========================
-   id        String Specifies the subnet ID.
-   ========= ====== ========================
+   +----------------+---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | Parameter      | Type    | Description                                                                                                                                                                     |
+   +================+=========+=================================================================================================================================================================================+
+   | id             | String  | Specifies the subnet ID.                                                                                                                                                        |
+   +----------------+---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | ipv6_enable    | Boolean | Specifies whether to support IPv6 addresses. If this parameter is set to **true**, the NIC supports IPv6 addresses. The default value is **false**. This parameter is reserved. |
+   +----------------+---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | ipv6_bandwidth | String  | Specifies the shared bandwidth of an IPv6 address. This parameter is left blank by default, indicating that no IPv6 shared bandwidth is bound. This parameter is reserved.      |
+   +----------------+---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-**security_groups** field data structure description
+**security_groups** field description
 
 .. _en-us_topic_0110252693__table570123513488:
 
@@ -143,7 +149,7 @@ Parameter description
                    {
                        "id": "a8327883-6b07-4497-9c61-68d03ee193a",
                        "ipv6_enable": false,
-                       "ipv6_bandwidth":  null,
+                       "ipv6_bandwidth":  null
                    }
                ],
                "available_zones": [
@@ -177,11 +183,9 @@ Parameter description
                "delete_publicip": false,
                "notifications": [
                    "EMAIL"
-               ]
+               ],
               "enterprise_project_id": "c92b1a5d-6f20-43f2-b1b7-7ce35e58e413",
                "multi_az_priority_policy": "PICK_FIRST"
-
-
            }
        ],
        "total_number": 1,
