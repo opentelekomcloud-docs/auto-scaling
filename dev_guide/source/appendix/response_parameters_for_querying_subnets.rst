@@ -112,6 +112,10 @@ Descriptions of **subnets** fields
                    "opt_value": "10.100.0.33,10.100.0.34",
                    "opt_name": "ntp"
                  }
+                 {
+                   "opt_value": "24h",
+                   "opt_name": "addresstime"
+                 }
               ]
            },
            {
@@ -136,8 +140,12 @@ Descriptions of **subnets** fields
                  {
                    "opt_value": "10.100.0.33,10.100.0.34",
                    "opt_name": "ntp"
+                 },
+                 {
+                   "opt_value": "24h",
+                   "opt_name": "addresstime"
                  }
-              ]
+              ],
            }
        ]
    }
