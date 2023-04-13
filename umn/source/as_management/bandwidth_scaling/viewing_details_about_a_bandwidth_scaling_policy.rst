@@ -8,7 +8,7 @@ Viewing Details About a Bandwidth Scaling Policy
 Scenarios
 ---------
 
-You can view details about a bandwidth scaling policy, including its basic information and execution logs. Policy execution logs record details about policy execution. This section describes how to create a bandwidth scaling policy.
+You can view details about a bandwidth scaling policy, including its basic information and execution logs. Policy execution logs record details about policy execution.
 
 Procedure
 ---------

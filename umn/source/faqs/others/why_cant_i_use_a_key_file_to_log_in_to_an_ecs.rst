@@ -30,7 +30,7 @@ Handling Method
 
 #. .. _as_faq_0012__li4126846117151:
 
-   Change the AS configuration for the AS group. For details, see :ref:`Changing the AS Configuration for an AS Group <as_01_0103>`.
+   Change the AS configuration of the AS group. For details, see :ref:`Changing the AS Configuration for an AS Group <as_01_0103>`.
 
 .. note::
 

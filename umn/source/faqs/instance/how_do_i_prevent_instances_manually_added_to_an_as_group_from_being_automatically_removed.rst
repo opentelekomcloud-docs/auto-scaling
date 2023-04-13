@@ -22,6 +22,6 @@ Note: If the instances manually added are stopped or if they malfunction, they a
 Method 2
 --------
 
-Enable instance protection for the N instances. For more information, see :ref:`Configuring Instance Protection <as_04_0107>`.
+Enable instance protection for these instances. For details, see :ref:`Configuring Instance Protection <as_04_0107>`.
 
 You can enable instance protection for these instances at the same time. When the AS group scales in, protected instances will not be removed from the AS group as long as they do not fail health checks. Instances that fail health check will be removed even if they are protected.

@@ -37,7 +37,7 @@ Bandwidth Scaling
 
 AS automatically adjusts a bandwidth based on the scaling policies you configured.
 
-After you configure a scaling policy as needed, when the trigger condition is met, AS automatically increases, decreases, or set the bandwidth to a specified value based on the policy you configured. Three types of bandwidth scaling policies are available, including the alarm, scheduled, and periodic policy.
+After you configure a scaling policy as needed, when the trigger condition is met, AS automatically increases, decreases, or sets the bandwidth to a specified value based on the policy you configured. Three types of bandwidth scaling policies are available, including the alarm, scheduled, and periodic policy.
 
 Region
 ------
@@ -46,7 +46,7 @@ A region is a geographic area where the resources used by AS are located.
 
 AZs in the same region can communicate with each other over an intranet, but AZs in different regions cannot.
 
-Cloud data centers are deployed in locations around the world, including Europe and Asia, and AS applies to different regions. Deploying AS in different regions allows you to tailor policies to better suit your requirements. For example, applications can be designed to meet user requirements in specific regions or comply with local laws or regulations.
+Cloud data centers are deployed worldwide and AS applies to different regions. Deploying AS in different regions allows you to tailor policies to better suit your requirements. For example, applications can be designed to meet user requirements in specific regions or comply with local laws or regulations.
 
 Project
 -------
