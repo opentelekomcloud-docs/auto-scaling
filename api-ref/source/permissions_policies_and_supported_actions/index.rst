@@ -5,6 +5,7 @@
 Permissions Policies and Supported Actions
 ==========================================
 
+-  :ref:`Introduction <as_07_0201>`
 -  :ref:`AS Groups <as_05_0202>`
 -  :ref:`AS Configurations <as_07_0203>`
 -  :ref:`Instances <as_07_0204>`
@@ -12,12 +13,15 @@ Permissions Policies and Supported Actions
 -  :ref:`AS Policy Execution Logs <as_07_0206>`
 -  :ref:`Scaling Action Logs <as_07_0207>`
 -  :ref:`Quotas <as_07_0208>`
+-  :ref:`Notifications <as_07_0209>`
+-  :ref:`Lifecycle Hooks <as_07_0210>`
 -  :ref:`Tags <as_07_0211>`
 
 .. toctree::
    :maxdepth: 1
    :hidden: 
 
+   introduction
    as_groups
    as_configurations
    instances
@@ -25,4 +29,6 @@ Permissions Policies and Supported Actions
    as_policy_execution_logs
    scaling_action_logs
    quotas
+   notifications
+   lifecycle_hooks
    tags
