@@ -8,7 +8,7 @@ Setting Up an Automatically Scalable Discuz! Forum
 Overview
 --------
 
-AS automatically adds instances to an AS group for applications and removes unneeded ones on demand. You do not need to prepare a large number of extra ECS instances for an expected marketing activity or unexpected peak hours. By eliminating the need to deploy those extra instances, AS ensures system reliability and reduces your operating costs.
+AS automatically adds instances to an AS group for applications and removes unneeded ones on demand. You do not need to prepare a large number of extra ECS instances for expected marketing activities or unexpected peak hours. By eliminating the need to deploy those extra instances, AS ensures system reliability and reduces your operating costs.
 
 This section describes how to use services, such as AS, ECS, ELB, and VPC to deploy a web service that can be automatically scaled in and out, for example, a Discuz! forum.
 
@@ -43,13 +43,13 @@ You can create a relational database using the Relational Database Service (RDS)
 
 #. Deploy the forum.
 
-   For instructions about how to deploy the Discuz! forum, see officially released Discuz! documentation. When configuring parameters, configure the private IP address of the ECS where the MySQL database is installed for the database server, and use the username and password authorized for remotely accessing the ECS where the MySQL database is installed to access the MySQL database. After the configuration is complete, you can unbind the EIP from the ECS where the forum is deployed to reduce resource usage.
+   To learn how to deploy the Discuz! forum, see the officially released Discuz! documentation. When configuring parameters, configure the private IP address of the ECS where the MySQL database is installed for the database server, and use the username and password authorized for remotely accessing the ECS where the MySQL database is installed to access the MySQL database. After the configuration is complete, you can unbind the EIP from the ECS where the forum is deployed to reduce resource usage.
 
 **Create a private image.**
 
 Use the ECS where the Discuz! forum is deployed to create a private image. This private image is used to create the ECSs that will be used for capacity expansion.
 
-#. Only a stopped ECS can be used to create a private image, so stop the ECS where the Discuz! forum is deployed before creating a private image. For detailed operations, see *Elastic Cloud Server User Guide*.
+#. Only a stopped ECS can be used to create a private image. Stop the ECS where the Discuz! forum is deployed before creating a private image. For detailed operations, see *Elastic Cloud Server User Guide*.
 #. Use the ECS to create a private image. For details, see *Image Management Service User Guide*.
 
 **Create an AS group.**
@@ -66,7 +66,7 @@ For instructions about how to create an AS configuration, see :ref:`Creating an 
 
 **Manually add the ECS to the AS group.**
 
-On the page providing details about the AS group, click the **Instances** tab and then **Add** to add the ECS where the Discuz! forum is deployed to the AS group. For details, see :ref:`Manual Scaling <as_04_0103>`. You can enable instance protection on this ECS so that it will not be automatically removed from the AS group.
+On the page providing details about the AS group, click the **Instances** tab and then **Add** to add the ECS where the Discuz! forum is deployed to the AS group. For details, see :ref:`Manual Scaling <as_04_0103>`. You can enable instance protection for this ECS so that it will not be automatically removed from the AS group.
 
 **Create an AS policy.**
 

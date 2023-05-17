@@ -8,7 +8,7 @@ Deleting an AS Configuration
 Scenarios
 ---------
 
-When you no longer need an AS configuration, you can delete it as long as the AS configuration is not used by an AS group. You can delete a single AS configuration or delete them batches.
+When you no longer need an AS configuration, you can delete it as long as the AS configuration is not used by an AS group. You can delete a single AS configuration or delete them in batches.
 
 Procedure
 ---------

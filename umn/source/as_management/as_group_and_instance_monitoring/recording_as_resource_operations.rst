@@ -17,7 +17,7 @@ Obtaining AS Information in CTS
 
 After you enable CTS in the application system, the system logs the API calling operations performed on AS resources. On the **Cloud Trace Service** console, you can view operation records for the last 7 days. To obtain more operation records, you can enable the Object Storage Service (OBS) and synchronize operation records to the OBS in real time.
 
-:ref:`Table 1 <as_06_0103__table11766471458>` list the AS operations that can be recorded by CTS.
+:ref:`Table 1 <as_06_0103__table11766471458>` lists the AS operations that can be recorded by CTS.
 
 .. _as_06_0103__table11766471458:
 
@@ -78,24 +78,20 @@ Viewing Audit Logs
 #. Click **Trace List** in the navigation pane on the left.
 #. You can use filters to query traces. The following filters are available:
 
-   -  **Trace Source**, **Resource Type**, and **Search By**
+   -  **Trace Type**, **Trace Source**, **Resource Type**, and **Search By**: Select a filter from the drop-down list.
 
-      Select a filter criterion from the drop-down list.
+      If you select **Resource ID** for **Search By**, specify a resource ID.
 
-      When you select **Trace name** for **Search By**, you need to select a specific trace name.
+      If you select **Data** for **Trace Type**, you can only filter traces by tracker.
 
-      When you select **Resource ID** for **Search By**, you need to select or enter a specific resource ID.
+   -  **Operator**: Select one or more specific operators from the drop-down list.
 
-      When you select **Resource name** for **Search By**, you need to select or enter a specific resource name.
+   -  **Trace Status**: Select **All trace statuses**, **Normal**, **Warning**, or **Incident**.
 
-   -  **Operator**: Select a specific operator (at user level rather than tenant level).
-
-   -  **Trace Status**: Available options include **All trace statuses**, **normal**, **warning**, and **incident**. You can only select one of them.
-
-   -  Time range: In the upper right corner of the page, you can query traces in the last one hour, last one day, last one week, or within a customized period of time.
+   -  Time range: In the upper right corner, choose **Last 1 hour**, **Last 1 day**, or **Last 1 week**, or specify a custom time range.
 
 #. Click |image2| to the left of the required trace to expand its details.
-#. Locate the required trace and click **View Trace** in the **Operation** column. A dialog box is displayed, showing the trace content.
+#. Locate the required trace and click **View Trace** in the **Operation** column. The trace details are displayed.
 
 CTS Log Entries
 ---------------

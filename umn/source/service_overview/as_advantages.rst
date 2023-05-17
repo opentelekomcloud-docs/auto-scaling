@@ -5,11 +5,11 @@
 AS Advantages
 =============
 
-AS automatically scales resources to keep up with service demands based on pre-configured AS policies. With automatic resource scaling, you can enjoy reduced costs, improved availability, and high fault tolerance. AS is used for following scenarios:
+AS automatically scales resources to keep up with service demands based on pre-configured AS policies. With automatic resource scaling, you can enjoy reduced costs, improved availability, and high fault tolerance. AS is used for the following scenarios:
 
 -  Heavy-traffic forums: The traffic on a popular forum is difficult to predict. AS dynamically adjusts the number of ECS instances based on monitored ECS metrics, such as vCPU and memory usage.
--  E-commerce: During big promotions, E-commerce websites need more resources. AS automatically increases ECS instances and bandwidths within minutes to ensure that promotions go smoothly.
--  Live streaming: A live streaming website may broadcast popular programs from 14:00 to 16:00 every day. AS automatically scales out ECS and bandwidth resources during this period to ensure a smooth viewer experience.
+-  E-commerce: During big promotions, e-commerce websites need more resources. AS automatically increases ECS instances and bandwidths within minutes to ensure that promotions go smoothly.
+-  Live streaming: A livestreaming website may broadcast popular programs from 14:00 to 16:00 every day. AS automatically scales out ECS and bandwidth resources during this period to ensure a smooth viewer experience.
 
 Automatic Resource Scaling
 --------------------------
@@ -26,13 +26,13 @@ AS adds ECS instances and increases bandwidths for your applications when the ac
 
    -  Scheduled scaling
 
-      Scheduled scaling helps you to set up your own scaling schedule according to predictable load changes by creating periodic or scheduled policies. For details, see :ref:`Scheduled Scaling <as_04_0102>`.
+      Scheduled scaling helps you set up your scaling schedule according to predictable load changes by creating periodic or scheduled policies. For details, see :ref:`Scheduled Scaling <as_04_0102>`.
 
    -  Manual scaling
 
       You can either manually change the expected number of instances of your AS group, or add or remove instances to or from the AS group. For details, see :ref:`Manual Scaling <as_04_0103>`.
 
-   Consider a train ticket booking application running on the public cloud. The load of the application may be relatively low during Q2 and Q3 because there are not many travelers, but relatively high during Q1 and Q4. Traditionally, there are two ways to plan for these changes in load. The first option is to provision enough servers so that the application always has enough capacity to meet demand, as shown in :ref:`Figure 1 <as_pro_0001__en-us_topic_0190953966_fig5650831994251>`. The second option is to provision servers according to the average load of the application, as shown in :ref:`Figure 2 <as_pro_0001__en-us_topic_0190953966_fig2116647195317>`. However, these two options may waste resources or be unable to meet demand during peak seasons. By enabling AS for this application, you have a third option available. AS helps you scale servers to keep up with changes in demand. This allows the application to maintain steady, predictable performance without wasting money on any unnecessary resources, as shown in :ref:`Figure 3 <as_pro_0001__en-us_topic_0190953966_fig2219215695354>`.
+   Consider a train ticket booking application running on the public cloud. The load of the application may be relatively low during Q2 and Q3 because there are not many travelers, but relatively high during Q1 and Q4. Traditionally, there are two ways to plan for these changes in load. The first option is to provide enough servers so that the application always has enough capacity to meet demand, as shown in :ref:`Figure 1 <as_pro_0001__en-us_topic_0190953966_fig5650831994251>`. The second option is to provision servers according to the average load of the application, as shown in :ref:`Figure 2 <as_pro_0001__en-us_topic_0190953966_fig2116647195317>`. However, these two options may waste resources or be unable to meet demand during peak seasons. By enabling AS for this application, you have a third option available. AS helps you scale servers to keep up with changes in demand. This allows the application to maintain steady, predictable performance without wasting money on any unnecessary resources, as shown in :ref:`Figure 3 <as_pro_0001__en-us_topic_0190953966_fig2219215695354>`.
 
    .. _as_pro_0001__en-us_topic_0190953966_fig5650831994251:
 
@@ -73,17 +73,17 @@ AS adds ECS instances and increases bandwidths for your applications when the ac
 
       The system periodically adjusts the bandwidth based on a configured periodic cycle.
 
-   For example, you can use an alarm-based policy to regulate the bandwidth for a live streaming website.
+   For example, you can use an alarm-based policy to regulate the bandwidth for a livestreaming website.
 
-   For a live streaming website, service load is difficult to predict. In this example, the bandwidth needs to be dynamically adjusted between 10 Mbit/s and 30 Mbit/s based on metrics such as outbound traffic and inbound traffic. AS can automatically adjust the bandwidth to meet requirements. You just need to select the relevant EIP and create two alarm policies. One policy is to increase the bandwidth by 2 Mbit/s when the outbound traffic is greater than *X* bytes, with the limit set to 30 Mbit/s. The other policy is to decrease the bandwidth by 2 Mbit/s when the outbound traffic is less than *X* bytes, with the limit set to 10 Mbit/s.
+   For a livestreaming website, service load is difficult to predict. In this example, the bandwidth needs to be dynamically adjusted between 10 Mbit/s and 30 Mbit/s based on metrics such as outbound traffic and inbound traffic. AS can automatically adjust the bandwidth to meet requirements. You just need to select the relevant EIP and create two alarm policies. One policy is to increase the bandwidth by 2 Mbit/s when the outbound traffic is greater than *X* bytes, with the limit set to 30 Mbit/s. The other policy is to decrease the bandwidth by 2 Mbit/s when the outbound traffic is less than *X* bytes, with the limit set to 10 Mbit/s.
 
 -  Evenly Distributing Instances by AZ
 
    To reduce the impact of power or network outage on system stability, AS attempts to distribute ECS instances evenly across the AZs that are used by an AS group.
 
-   A region is a geographic area where resources used by ECS instances are located. Each region contains multiple Availability Zones (AZs) where resources use independent power supplies and networks. AZs are physically isolated from one another but interconnected through an intranet. AZs are engineered to be isolated from failures in other AZs. They provide cost-effective, low-latency network connections to other AZs in the same region.
+   A region is a geographic area where resources used by ECS instances are located. Each region contains multiple AZs where resources use independent power supplies and networks. AZs are physically isolated from one another but interconnected through an intranet. AZs are engineered to be isolated from failures in other AZs. They provide cost-effective, low-latency network connections to other AZs in the same region.
 
-   An AS group can contain ECS instances in one or more AZs within a region. During scale the capacity of an AS group, AS attempts to evenly distribute ECS instances across AZs used by the AS group based on the following rules:
+   An AS group can contain ECS instances in one or more AZs within a region. When scaling the capacity of an AS group, AS attempts to evenly distribute ECS instances across AZs used by the AS group based on the following rules:
 
    **Evenly distributing new instances to balanced AZs**
 

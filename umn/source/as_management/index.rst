@@ -11,6 +11,7 @@ AS Management
 -  :ref:`Scaling Action <as_04_0100>`
 -  :ref:`Bandwidth Scaling <as_05_0101>`
 -  :ref:`AS Group and Instance Monitoring <as_06_0100>`
+-  :ref:`Permissions Management <as_07_0100>`
 
 .. toctree::
    :maxdepth: 1
@@ -22,3 +23,4 @@ AS Management
    scaling_action/index
    bandwidth_scaling/index
    as_group_and_instance_monitoring/index
+   permissions_management/index

@@ -8,7 +8,7 @@ Enabling an AS Group
 Scenarios
 ---------
 
-You can enable an AS group to automatically scale in or out capacity.
+You can enable an AS group to automatically scale capacity in or out.
 
 After an AS group is enabled, its status changes to **Enabled**. AS monitors the AS policy and triggers a scaling action for AS groups only in **Enabled** state. After an AS group is enabled, AS triggers a scaling action to automatically add or remove instances if the number of instances in the AS group is different from the expected number of instances.
 

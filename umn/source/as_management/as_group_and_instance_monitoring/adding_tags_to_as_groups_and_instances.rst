@@ -14,7 +14,7 @@ Using a tag, you can assign custom data to each AS group. You can organize and m
 
 Each tag contains a key and a value. You can specify the key and value for each tag. A key can be a category associated with certain values, such as usage, owner, and environment.
 
-For example, if you want to distinguish the test environment and production environment, you can allocate a tag with the key **environment** to each AS group. For the test environment, the key value is **test** and for the production environment, the key value is **production**. You are advised to use one or more groups of consistent tags to manage your AS group resources.
+For example, if you want to distinguish between the test environment and production environment, you can allocate a tag with the key **environment** to each AS group. For the test environment, the key value is **test** and for the production environment, the key value is **production**. You are advised to use one or more groups of consistent tags to manage your AS group resources.
 
 After you allocate a tag to an AS group, the system will automatically add the tag to the instances automatically created in the AS group. If you add a tag to an AS group or modify the tag, the new tag will be added to the ECSs automatically created in the AS group. Creating, deleting, or modifying the tag of an AS group will have no impact on the ECSs in the AS group.
 
@@ -45,15 +45,17 @@ Adding a Tag to an AS Group
 
    .. table:: **Table 1** Tag naming rules
 
-      +-----------------------+------------------------------------------------+-----------------------+
-      | Parameter             | Requirement                                    | Example Value         |
-      +=======================+================================================+=======================+
-      | Tag Key               | -  The value cannot be empty.                  | Organization          |
-      |                       | -  An AS group has a unique key.               |                       |
-      +-----------------------+------------------------------------------------+-----------------------+
-      | Tag Value             | -  The value can be an empty character string. | Apache                |
-      |                       | -  A key can have only one value.              |                       |
-      +-----------------------+------------------------------------------------+-----------------------+
+      +-----------------------+--------------------------------------------------------------------------------------------------------------------------+-----------------------+
+      | Parameter             | Requirement                                                                                                              | Example Value         |
+      +=======================+==========================================================================================================================+=======================+
+      | Tag Key               | -  The value cannot be empty.                                                                                            | Organization          |
+      |                       | -  An AS group has a unique key.                                                                                         |                       |
+      |                       | -  A key can contain a maximum of 36 characters, including only digits, letters, hyphens (-), and underscores (_).       |                       |
+      +-----------------------+--------------------------------------------------------------------------------------------------------------------------+-----------------------+
+      | Tag Value             | -  The value can be an empty character string.                                                                           | Apache                |
+      |                       | -  A key can have only one value.                                                                                        |                       |
+      |                       | -  A tag value can contain a maximum of 43 characters, including only digits, letters, hyphens (-), and underscores (_). |                       |
+      +-----------------------+--------------------------------------------------------------------------------------------------------------------------+-----------------------+
 
 #. Click **OK**.
 

@@ -10,6 +10,7 @@ Service Overview
 -  :ref:`Instance Lifecycle <as_pro_0002>`
 -  :ref:`Constraints <as_pro_0003>`
 -  :ref:`AS and Other Services <as_pro_0006>`
+-  :ref:`Permissions Management <as_pro_0007>`
 -  :ref:`User Permissions <as_pro_0008>`
 -  :ref:`Basic Concepts <en-us_topic_0042018372>`
 
@@ -22,5 +23,6 @@ Service Overview
    instance_lifecycle
    constraints
    as_and_other_services
+   permissions_management
    user_permissions
    basic_concepts

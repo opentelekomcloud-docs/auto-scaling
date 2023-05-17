@@ -14,7 +14,7 @@ This section describes how to manage bandwidth scaling policies, including enabl
 
 .. note::
 
-   The bandwidth scaling policy corresponding to a released EIP still occupies the policy quota. Only the account and its IAM users with the global permission can manage the AS bandwidth policy.
+   The bandwidth scaling policy configured for a released EIP still occupies the policy quota. Only the account and its IAM users with the global permission can manage the bandwidth scaling policy.
 
 Enabling a Bandwidth Scaling Policy
 -----------------------------------

@@ -10,7 +10,7 @@ Scenarios
 
 This section describes how to check whether a scaling action has been performed and how to view scaling action details.
 
-Viewing Scaling Actions
+Viewing Monitoring Data
 -----------------------
 
 The following steps illustrate how to view scaling actions of an AS group.

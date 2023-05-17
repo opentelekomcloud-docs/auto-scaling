@@ -8,7 +8,7 @@ Manual Scaling
 Scenarios
 ---------
 
-You can manually add or remove instances to or from an AS group, or changing the expected number of instances.
+You can manually add or remove instances to or from an AS group, or change the expected number of instances.
 
 Procedure
 ---------

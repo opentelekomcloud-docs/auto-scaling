@@ -17,11 +17,11 @@ AS has the following constraints:
 
          Think of stateless transactions as a vending machine: a single request and a response.
 
-      -  Stateful applications and processes, however, are those that can be returned to again and again. They are performed with the context of previous transactions and the current transaction may be affected by what happened during previous transactions.
+      -  Stateful applications and processes, however, are those that can be returned to again and again. They are performed in the context of previous transactions and the current transaction may be affected by what happened during previous transactions.
 
          ECS instances where stateful applications are running store data that needs to be persisted locally.
 
-         Stateful transactions are performed repeatedly, such as online banking or e-mail, which are performed with the context of previous transactions.
+         Stateful transactions are performed repeatedly, such as online banking or e-mail, which are performed in the context of previous transactions.
 
 -  AS can release ECS instances in an AS group automatically, so the instances cannot be used to save application status information (such as session statuses) or related data (such as database data and logs). If the application status or related data must be saved, you can store the information on separate servers.
 

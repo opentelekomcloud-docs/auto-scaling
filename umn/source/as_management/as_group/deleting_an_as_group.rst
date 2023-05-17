@@ -10,9 +10,9 @@ Scenarios
 
 You can delete an AS group when it is no longer required.
 
--  If an AS group is not required during a specified period of time, you are advised to disable it but not delete it.
+-  If an AS group is not required during a specified period, you are advised to disable it but not delete it.
 -  An AS group can be deleted only when it has no instances and no scaling action is being performed.
--  When an AS group is deleted, its AS policies and the alarm rules generated based those AS policies will be automatically deleted.
+-  When an AS group is deleted, its AS policies and the alarm rules generated based on those AS policies will be automatically deleted.
 
 Procedure
 ---------

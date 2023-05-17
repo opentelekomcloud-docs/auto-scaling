@@ -60,7 +60,7 @@ Procedure
       result=`fdisk -l $disk | grep $disk`
       if [ $result = 1 ]
       then
-          echo "disk path is not exist in linux,exit"
+          echo "disk path does not exist in linux,exit"
           exit
       fi
 
