@@ -14,6 +14,10 @@ This interface is used to remove a specified instance from an AS group.
 
 -  You can remove instances from an AS group only when no scaling action is in progress.
 
+.. note::
+
+   Manually added instances are removed from an AS group but are not deleted.
+
 URI
 ---
 
@@ -36,31 +40,29 @@ DELETE /autoscaling-api/v1/{project_id}/scaling_group_instance/{instance_id}
    |                 |                 |                 | -  **yes**: The instance will be deleted.                                                          |
    +-----------------+-----------------+-----------------+----------------------------------------------------------------------------------------------------+
 
-Request Message
+Request
+-------
+
+None
+
+Example Request
 ---------------
 
--  Request parameters
+This example removes the instance with ID **b25c1589-c96c-465b-9fef-d06540d1945c** from the AS group but does not delete the instance.
 
-   None
+.. code-block:: text
 
--  Example request
+   DELETE https://{Endpoint}/autoscaling-api/v1/{project_id}/scaling_group_instance/b25c1589-c96c-465b-9fef-d06540d1945c?instance_delete=no
 
-   This example shows how to remove but not delete the instance with ID **b25c1589-c96c-465b-9fef-d06540d1945c** from an AS group.
+Response
+--------
 
-   .. code-block:: text
+None
 
-      DELETE https://{Endpoint}/autoscaling-api/v1/{project_id}/scaling_group_instance/b25c1589-c96c-465b-9fef-d06540d1945c?instance_delete=no
-
-Response Message
+Example Response
 ----------------
 
--  Response parameters
-
-   None
-
--  Example response
-
-   None
+None
 
 Returned Values
 ---------------

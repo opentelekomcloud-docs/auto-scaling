@@ -9,6 +9,11 @@ Function
 --------
 
 -  Add or remove instances to or from an AS group in batches.
+
+   .. note::
+
+      If the instances were manually added to an AS group, they are removed from the AS group but are not deleted.
+
 -  Configure instance protection or cancel the configuration for the instances in an AS group in batches.
 
 .. note::
@@ -35,38 +40,54 @@ POST /autoscaling-api/v1/{project_id}/scaling_group_instance/{scaling_group_id}/
    scaling_group_id Yes       String Specifies the AS group ID.
    ================ ========= ====== ==========================
 
-Request Message
+Request
+-------
+
+.. table:: **Table 2** Request parameters
+
+   +-----------------+-----------------+------------------+-----------------------------------------------------------------------------------------------------------------+
+   | Parameter       | Mandatory       | Type             | Description                                                                                                     |
+   +=================+=================+==================+=================================================================================================================+
+   | instances_id    | Yes             | Array of strings | Specifies the ECS ID.                                                                                           |
+   +-----------------+-----------------+------------------+-----------------------------------------------------------------------------------------------------------------+
+   | instance_delete | No              | String           | Specifies whether to delete an instance when it is removed from an AS group.                                    |
+   |                 |                 |                  |                                                                                                                 |
+   |                 |                 |                  | Options:                                                                                                        |
+   |                 |                 |                  |                                                                                                                 |
+   |                 |                 |                  | -  **no** (default): The instance will not be deleted.                                                          |
+   |                 |                 |                  |                                                                                                                 |
+   |                 |                 |                  | -  **yes**: The instance will be deleted.                                                                       |
+   |                 |                 |                  |                                                                                                                 |
+   |                 |                 |                  |    If the instances were manually added to an AS group, they are removed from the AS group but are not deleted. |
+   |                 |                 |                  |                                                                                                                 |
+   |                 |                 |                  | This parameter takes effect only when the **action** is set to **REMOVE**.                                      |
+   +-----------------+-----------------+------------------+-----------------------------------------------------------------------------------------------------------------+
+   | action          | Yes             | String           | Specifies an action to be performed on instances in batches. The options are as follows:                        |
+   |                 |                 |                  |                                                                                                                 |
+   |                 |                 |                  | -  **ADD**: adds instances to the AS group.                                                                     |
+   |                 |                 |                  | -  **REMOVE**: removes instances from the AS group.                                                             |
+   |                 |                 |                  | -  **PROTECT**: enables instance protection.                                                                    |
+   |                 |                 |                  | -  **UNPROTECT**: disables instance protection.                                                                 |
+   +-----------------+-----------------+------------------+-----------------------------------------------------------------------------------------------------------------+
+
+Example Request
 ---------------
 
--  Request parameters
+-  This example adds two instances with IDs **instance_id_1** and **instance_id_2** to the AS group with ID **e5d27f5c-dd76-4a61-b4bc-a67c5686719a** in a batch.
 
-   .. table:: **Table 2** Request parameters
+   .. code-block:: text
 
-      +-----------------+-----------------+------------------+------------------------------------------------------------------------------------------+
-      | Parameter       | Mandatory       | Type             | Description                                                                              |
-      +=================+=================+==================+==========================================================================================+
-      | instances_id    | Yes             | Array of strings | Specifies the ECS ID.                                                                    |
-      +-----------------+-----------------+------------------+------------------------------------------------------------------------------------------+
-      | instance_delete | No              | String           | Specifies whether to delete an instance when it is removed from an AS group.             |
-      |                 |                 |                  |                                                                                          |
-      |                 |                 |                  | Options:                                                                                 |
-      |                 |                 |                  |                                                                                          |
-      |                 |                 |                  | -  **no** (default): The instance will not be deleted.                                   |
-      |                 |                 |                  | -  **yes**: The instance will be deleted.                                                |
-      |                 |                 |                  |                                                                                          |
-      |                 |                 |                  | This parameter takes effect only when the **action** is set to **REMOVE**.               |
-      +-----------------+-----------------+------------------+------------------------------------------------------------------------------------------+
-      | action          | Yes             | String           | Specifies an action to be performed on instances in batches. The options are as follows: |
-      |                 |                 |                  |                                                                                          |
-      |                 |                 |                  | -  **ADD**: adds instances to the AS group.                                              |
-      |                 |                 |                  | -  **REMOVE**: removes instances from the AS group.                                      |
-      |                 |                 |                  | -  **PROTECT**: enables instance protection.                                             |
-      |                 |                 |                  | -  **UNPROTECT**: disables instance protection.                                          |
-      +-----------------+-----------------+------------------+------------------------------------------------------------------------------------------+
+      POST https://{Endpoint}/autoscaling-api/v1/{project_id}/scaling_group_instance/e5d27f5c-dd76-4a61-b4bc-a67c5686719a/action
 
--  Example request
+      {
+          "action": "ADD",
+          "instances_id": [
+              "instance_id_1",
+              "instance_id_2"
+          ]
+      }
 
-   This example shows how to remove and delete instances with IDs **instance_id_1** and **instance_id_2** from the AS group with ID **e5d27f5c-dd76-4a61-b4bc-a67c5686719a** in a batch.
+-  This example removes and deletes instances with IDs **instance_id_1** and **instance_id_2** from the AS group **e5d27f5c-dd76-4a61-b4bc-a67c5686719a** in a batch.
 
    .. code-block:: text
 
@@ -81,16 +102,15 @@ Request Message
           "instance_delete": "yes"
       }
 
-Response Message
+Response
+--------
+
+None
+
+Example Response
 ----------------
 
--  Response parameters
-
-   None
-
--  Example response
-
-   None
+None
 
 Returned Values
 ---------------

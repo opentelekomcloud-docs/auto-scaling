@@ -18,6 +18,10 @@ This interface is used to delete a specified AS group.
 
 -  If the value of **force_delete** is set to **yes**, the AS group enters the **DELETING** state, rejecting new requests for scaling actions while completing the existing scaling actions. Then, all ECS instances are removed from the AS group and the AS group is deleted. Note that the manually added ECS instances will be removed from the AS group and the ECS instances automatically created by AS will be automatically deleted.
 
+   .. caution::
+
+      Forcibly deleting an AS group may not delete ECS instances in the group.
+
 URI
 ---
 
@@ -38,31 +42,29 @@ DELETE /autoscaling-api/v1/{project_id}/scaling_group/{scaling_group_id}
    |                  |                 |                 | -  **yes**: indicates to forcibly delete an AS group.                     |
    +------------------+-----------------+-----------------+---------------------------------------------------------------------------+
 
-Request Message
+Request
+-------
+
+None
+
+Example Request
 ---------------
 
--  Request parameters
+This example deletes the AS group with ID **a8327883-6b07-4497-9c61-68d03ee193a1**.
 
-   None
+.. code-block:: text
 
--  Example request
+   DELETE https://{Endpoint}/autoscaling-api/v1/{project_id}/scaling_group/a8327883-6b07-4497-9c61-68d03ee193a1?force_delete=yes
 
-   This example shows how to forcibly delete the AS group with ID **a8327883-6b07-4497-9c61-68d03ee193a1**.
+Response
+--------
 
-   .. code-block:: text
+None
 
-      DELETE https://{Endpoint}/autoscaling-api/v1/{project_id}/scaling_group/a8327883-6b07-4497-9c61-68d03ee193a1?force_delete=yes
-
-Response Message
+Example Response
 ----------------
 
--  Response parameters
-
-   None
-
--  Example response
-
-   None
+None
 
 Returned Values
 ---------------

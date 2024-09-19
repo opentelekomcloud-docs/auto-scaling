@@ -2,8 +2,8 @@
 
 .. _as_07_0200:
 
-Permissions Policies and Supported Actions
-==========================================
+Permissions and Supported Actions
+=================================
 
 -  :ref:`Introduction <as_07_0201>`
 -  :ref:`AS Groups <as_05_0202>`

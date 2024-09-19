@@ -1,69 +1,45 @@
-:original_name: as_06_0106.html
+:original_name: as_06_0907.html
 
-.. _as_06_0106:
+.. _as_06_0907:
 
-Enabling or Disabling an AS Group
-=================================
+Deleting a Lifecycle Hook
+=========================
 
 Function
 --------
 
-This interface is used to enable or disable a specified AS group.
+This interface is used to delete a specified lifecycle hook.
 
-.. note::
-
-   For a disabled AS group, AS does not automatically trigger any scaling actions. When an AS group has an in-progress scaling action, the scaling action does not stop immediately after the AS group is disabled.
+When a scaling action is being performed in an AS group, the lifecycle hooks of the AS group cannot be deleted.
 
 URI
 ---
 
-POST /autoscaling-api/v1/{project_id}/scaling_group/{scaling_group_id}/action
+DELETE /autoscaling-api/v1/{project_id}/scaling_lifecycle_hook/{scaling_group_id}/{lifecycle_hook_name}
 
 .. table:: **Table 1** Parameter description
 
-   ================ ========= ====== ==========================
-   Parameter        Mandatory Type   Description
-   ================ ========= ====== ==========================
-   project_id       Yes       String Specifies the project ID.
-   scaling_group_id Yes       String Specifies the AS group ID.
-   ================ ========= ====== ==========================
+   =================== ========= ====== ==================================
+   Parameter           Mandatory Type   Description
+   =================== ========= ====== ==================================
+   project_id          Yes       String Specifies the project ID.
+   scaling_group_id    Yes       String Specifies the AS group ID.
+   lifecycle_hook_name Yes       String Specifies the lifecycle hook name.
+   =================== ========= ====== ==================================
 
 Request
 -------
 
-.. table:: **Table 2** Request parameters
-
-   +-----------------+-----------------+-----------------+---------------------------------------------------------+
-   | Parameter       | Mandatory       | Type            | Description                                             |
-   +=================+=================+=================+=========================================================+
-   | action          | Yes             | String          | Specifies a flag for enabling or disabling an AS group. |
-   |                 |                 |                 |                                                         |
-   |                 |                 |                 | -  **resume**: enables the AS group.                    |
-   |                 |                 |                 | -  **pause**: disables the AS group.                    |
-   +-----------------+-----------------+-----------------+---------------------------------------------------------+
+None
 
 Example Request
 ---------------
 
--  This example enables the AS group with ID **a8327883-6b07-4497-9c61-68d03ee193a1**.
+This example deletes the lifecycle hook named **test-hook1** in the AS group with ID **e5d27f5c-dd76-4a61-b4bc-a67c5686719a**.
 
-   .. code-block:: text
+.. code-block:: text
 
-      POST https://{Endpoint}/autoscaling-api/v1/{project_id}/scaling_group/a8327883-6b07-4497-9c61-68d03ee193a1/action
-
-      {
-          "action": "resume"
-      }
-
--  This example disables the AS group with ID **a8327883-6b07-4497-9c61-68d03ee193a1**.
-
-   .. code-block:: text
-
-      POST https://{Endpoint}/autoscaling-api/v1/{project_id}/scaling_group/a8327883-6b07-4497-9c61-68d03ee193a1/action
-
-      {
-          "action": "pause"
-      }
+   DELETE https://{Endpoint}/autoscaling-api/v1/{project_id}/scaling_lifecycle_hook/e5d27f5c-dd76-4a61-b4bc-a67c5686719a/test-hook1
 
 Response
 --------

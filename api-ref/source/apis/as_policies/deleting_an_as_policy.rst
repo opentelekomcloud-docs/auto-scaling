@@ -24,31 +24,29 @@ DELETE /autoscaling-api/v1/{project_id}/scaling_policy/{scaling_policy_id}
    scaling_policy_id Yes       String Specifies the AS policy ID.
    ================= ========= ====== ===========================
 
-Request Message
+Request
+-------
+
+None
+
+Example Request
 ---------------
 
--  Request parameters
+This example deletes the AS policy with ID **906f73ff-56e8-41b2-a005-8157d0c60361**.
 
-   None
+.. code-block:: text
 
--  Example request
+   DELETE https://{Endpoint}/autoscaling-api/v1/{project_id}/scaling_policy/906f73ff-56e8-41b2-a005-8157d0c60361
 
-   This example shows how to delete the AS policy with ID **906f73ff-56e8-41b2-a005-8157d0c60361**.
+Response
+--------
 
-   .. code-block:: text
+None
 
-      DELETE https://{Endpoint}/autoscaling-api/v1/{project_id}/scaling_policy/906f73ff-56e8-41b2-a005-8157d0c60361
-
-Response Message
+Example Response
 ----------------
 
--  Response parameters
-
-   None
-
--  Example response
-
-   None
+None
 
 Returned Values
 ---------------
