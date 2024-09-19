@@ -8,7 +8,7 @@ Configuring Instance Protection
 Scenarios
 ---------
 
-To control whether a instance can be removed automatically from an AS group, use instance protection. Once configured, when AS automatically scales in the AS group, the instance that is protected will not be removed.
+To control whether an instance can be removed automatically from an AS group, use instance protection. Once configured, when AS automatically scales in the AS group, the instance that is protected will not be removed.
 
 Prerequisites
 -------------

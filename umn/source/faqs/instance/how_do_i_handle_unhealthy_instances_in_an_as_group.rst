@@ -5,7 +5,7 @@
 How Do I Handle Unhealthy Instances in an AS Group?
 ===================================================
 
-Normally, you do not need to handle unhealthy instances because AS periodically checks the health status of instances in an AS group. When an AS group is enabled, unhealthy instances are removed and new instances are created to ensure that the expected number of instances are running in the AS group. When an AS group is disabled, AS keeps performing health checks on instances, but does not remove instances.
+Normally, you do not need to handle unhealthy instances because AS periodically checks the health status of instances in an AS group. When an AS group is enabled, unhealthy instances are removed and new instances are created to ensure that the expected number of instances are running in the AS group. When an AS group is disabled, AS still checks the health of instances, but does not remove instances.
 
 It should be noted that if ELB health check is selected, ELB sends heartbeat messages to instances through an intranet. To ensure that the ELB health check can be performed properly, ensure that your instances can be accessed through that intranet. To check this, perform the following steps:
 

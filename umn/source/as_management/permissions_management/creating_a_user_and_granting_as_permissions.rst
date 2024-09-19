@@ -8,20 +8,20 @@ Creating a User and Granting AS Permissions
 Scenarios
 ---------
 
-`IAM <https://docs.otc.t-systems.com/identity-access-management/umn/service_overview/what_is_iam.html>`__ can help you implement fine-grained permissions control over your AS resources. With IAM, you can
+`IAM <https://docs.otc.t-systems.com/usermanual/iam/iam_01_0026.html>`__ can help you implement fine-grained permissions control over your AS resources. With IAM, you can:
 
 -  Create IAM users for employees based on your enterprise's organizational structure. Each IAM user will have their own security credentials for accessing AS resources.
--  Grant only the permissions required for users to perform a specific task.
--  Use `IAM <https://docs.otc.t-systems.com/identity-access-management/umn/service_overview/what_is_iam.html>`__ to entrust an account or cloud service to perform efficient O&M on your AS resources.
+-  Grant users only the permissions required to perform a given task based on their job responsibilities.
+-  Use `IAM <https://docs.otc.t-systems.com/usermanual/iam/iam_01_0026.html>`__ to entrust an account or cloud service to perform efficient O&M on your AS resources.
 
 If your account does not require individual IAM users, skip this section.
 
-This section describes the procedure for granting permissions (see :ref:`Figure 1 <as_07_0102__fig1515164216142>`).
+This section describes the procedure for granting permissions. :ref:`Figure 1 <as_07_0102__fig1515164216142>` shows the process flow.
 
 Prerequisites
 -------------
 
-Learn about the permissions (see :ref:`Permissions Management <as_pro_0007>`) supported by AS and choose policies or roles according to your requirements. For the permissions of other services, see `Permission Description <https://docs.otc.t-systems.com/additional/permissions.html>`__.
+Before granting permissions to user groups, you should learn about the permissions (:ref:`Permissions Management <as_pro_0007>`) supported by AS and choose policies or roles based on service requirements. To grant permissions for other services, learn about all `permissions <https://docs.otc.t-systems.com/permissions/index.html>`__ supported by IAM.
 
 Process Flow
 ------------
@@ -35,17 +35,17 @@ Process Flow
 
 #. .. _as_07_0102__li10176121316284:
 
-   `Create a user group and assign permissions to it <https://docs.otc.t-systems.com/identity-access-management/umn/getting_started/creating_a_user_group_and_assigning_permissions.html#iam-01-0030>`__.
+   `Create a user group and assign permissions to it <https://docs.otc.t-systems.com/usermanual/iam/iam_01_0030.html>`__.
 
-   Create a user group on the IAM console, and attach the **AutoScaling ReadOnlyAccess** policy to the group.
+   Create a user group on the IAM console, and assign the ASReadOnlyAccess permissions to the group.
 
-#. `Create an IAM user and add it to the user group <https://docs.otc.t-systems.com/identity-access-management/umn/user_guide/user_and_user_group_management/creating_a_user.html#en-us-topic-0046611303>`__.
+#. `Create an IAM user and add it to the user group <https://docs.otc.t-systems.com/usermanual/iam/iam_01_0031.html>`__.
 
    Create a user on the IAM console and add the user to the group created in :ref:`1 <as_07_0102__li10176121316284>`.
 
-#. `Log in <https://docs.otc.t-systems.com/identity-access-management/umn/getting_started/logging_in_as_a_user.html#iam-01-0032>`__ and verify permissions.
+#. `Log in <https://docs.otc.t-systems.com/usermanual/iam/iam_01_0032.html>`__ and verify permissions.
 
    Log in to the AS console as the created user, and verify the user's permissions for AS.
 
-   -  Choose **Service List** > **Auto Scaling**. Then, click **Create AS Group** on the AS console. If a message appears indicating that you have insufficient permissions to perform the operation, the **AutoScaling ReadOnlyAccess** policy has already taken effect.
-   -  Choose any other service in the **Service List**. If a message appears indicating that you have insufficient permissions to access the service, the **AutoScaling ReadOnlyAccess** policy has already taken effect.
+   -  Choose **Service List** > **Auto Scaling**. Then, click **Create AS Group** on the AS console. If a message appears indicating that you have insufficient permissions to perform the operation, the ASReadOnlyAccess policy is in effect.
+   -  Choose another in the **Service List**. If a message appears indicating that you have insufficient permissions to access the service, the ASReadOnlyAccess policy is in effect.

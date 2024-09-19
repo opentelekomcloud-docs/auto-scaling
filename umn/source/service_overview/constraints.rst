@@ -5,9 +5,12 @@
 Constraints
 ===========
 
-AS has the following constraints:
+Function Restrictions
+---------------------
 
--  Only applications that are stateless and can be horizontally scaled can run on instances in an AS group.
+AS has the following restrictions:
+
+-  Only applications that are stateless and horizontally scalable can run on instances in an AS group.
 
    .. note::
 
@@ -35,22 +38,25 @@ AS has the following constraints:
 
       If the Cloud Eye administrator is not available, you can only use an existing alarm to create an alarm policy. If the ELB administrator is not available, you can still use existing load balancers.
 
--  AS resources must comply with quota requirements listed in :ref:`Table 1 <as_pro_0003__en-us_topic_0190954113_en-us_topic_0026721513_d0e195>`.
+Quotas
+------
 
-   .. _as_pro_0003__en-us_topic_0190954113_en-us_topic_0026721513_d0e195:
+AS resources must comply with quota requirements listed in :ref:`Table 1 <as_pro_0003__en-us_topic_0190954113_en-us_topic_0026721513_d0e195>`.
 
-   .. table:: **Table 1** Quotas
+.. _as_pro_0003__en-us_topic_0190954113_en-us_topic_0026721513_d0e195:
 
-      +--------------------------+---------------------------------------------------------------------+---------+
-      | Item                     | Description                                                         | Default |
-      +==========================+=====================================================================+=========+
-      | AS group                 | Maximum number of AS groups per region per account                  | 25      |
-      +--------------------------+---------------------------------------------------------------------+---------+
-      | AS configuration         | Maximum number of AS configurations per region per account          | 100     |
-      +--------------------------+---------------------------------------------------------------------+---------+
-      | AS policy                | Maximum number of AS policies per AS group                          | 50      |
-      +--------------------------+---------------------------------------------------------------------+---------+
-      | Instance                 | Maximum number of instances per AS group                            | 200     |
-      +--------------------------+---------------------------------------------------------------------+---------+
-      | Bandwidth scaling policy | Maximum number of bandwidth scaling policies per region per account | 50      |
-      +--------------------------+---------------------------------------------------------------------+---------+
+.. table:: **Table 1** Quotas
+
+   +--------------------------+---------------------------------------------------------------------+---------+
+   | Item                     | Description                                                         | Default |
+   +==========================+=====================================================================+=========+
+   | AS group                 | Maximum number of AS groups per region per account                  | 25      |
+   +--------------------------+---------------------------------------------------------------------+---------+
+   | AS configuration         | Maximum number of AS configurations per region per account          | 100     |
+   +--------------------------+---------------------------------------------------------------------+---------+
+   | AS policy                | Maximum number of AS policies per AS group                          | 50      |
+   +--------------------------+---------------------------------------------------------------------+---------+
+   | Instance                 | Maximum number of instances per AS group                            | 200     |
+   +--------------------------+---------------------------------------------------------------------+---------+
+   | Bandwidth scaling policy | Maximum number of bandwidth scaling policies per region per account | 50      |
+   +--------------------------+---------------------------------------------------------------------+---------+

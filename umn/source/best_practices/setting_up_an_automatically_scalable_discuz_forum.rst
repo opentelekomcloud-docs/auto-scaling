@@ -54,7 +54,7 @@ Use the ECS where the Discuz! forum is deployed to create a private image. This 
 
 **Create an AS group.**
 
-An AS group consists of a collection of ECS instances, AS configurations, and AS policies that have similar attributes and apply to the same application scenario. An AS group is the basis for enabling or disabling AS policies and performing scaling actions. You must create an AS group to automatically add or remove ECS instances to match changes in traffic to the Discuz! forum.
+An AS group is a collection of ECS instances with the same configurations and AS policies that have similar attributes and apply to the same application scenario. An AS group is the basis for enabling or disabling AS policies and performing scaling actions. You must create an AS group to automatically add or remove ECS instances to match changes in traffic to the Discuz! forum.
 
 For instructions about how to create an AS group, see :ref:`Creating an AS Group <en-us_topic_0042018368>`. During the configuration, use the created VPC, subnet, load balancer, and listener.
 
@@ -62,7 +62,7 @@ For instructions about how to create an AS group, see :ref:`Creating an AS Group
 
 The AS configuration lists the basic specifications of the ECSs to be automatically added to the AS group in a scaling action.
 
-For instructions about how to create an AS configuration, see :ref:`Creating an AS Configuration from a New Specifications Template <as_02_0103>`. During the configuration, select the private image you created in the preceding step. Configure other parameters based on service requirements.
+For instructions about how to create an AS configuration, see :ref:`Creating an AS Configuration from Scratch <as_02_0103>`. During the configuration, select the private image you created in the preceding step. Configure other parameters based on service requirements.
 
 **Manually add the ECS to the AS group.**
 

@@ -43,9 +43,9 @@ The handling method depends on the reported possible cause.
 
    Handling method: Modify the subnet information and enable the AS group.
 
--  Issue description: The ECS resources of this type in the selected AZ have been sold out.
+-  Issue description: This type of ECSs has been sold out in the selected AZ.
 
-   Possible cause: ECSs of this type have been sold out or are not supported in the AZ selected for the AS group. ECSs of this type are the ECS flavor selected in the AS configuration.
+   Possible cause: This type of ECSs has been sold out or is not supported in the AZ selected for the AS group. The ECS flavor selected in the AS configuration is sold out.
 
    Handling method: Change the AS configuration for the AS group and then enable the AS group. If there is no instance in the AS group, you can also change the AZ for the AS group and then enable the AS group.
 
@@ -61,7 +61,7 @@ The handling method depends on the reported possible cause.
 
    Handling method: Change the AS configuration for the AS group and then enable the AS group.
 
--  Issue description: Storage resources of this type have been sold out in the selected AZ.
+-  Issue description: This type of storage resources has been sold out in the selected AZ.
 
    Possible cause: Storage resources of this type have been sold out or are not supported in the AZ selected for the AS group. Storage resources of this type refer to the system and data disk types selected for the AS configuration.
 
@@ -73,7 +73,7 @@ The handling method depends on the reported possible cause.
 
    Handling method: Try again later or contact technical support.
 
--  Issue description: The specification defined in the AS configuration is unavailable.
+-  Issue description: The flavor defined in the AS configuration is unavailable.
 
    Handling method: Change specifications by creating an AS configuration as prompted by the error message and use this AS configuration for the AS group. Then enable the AS group.
 

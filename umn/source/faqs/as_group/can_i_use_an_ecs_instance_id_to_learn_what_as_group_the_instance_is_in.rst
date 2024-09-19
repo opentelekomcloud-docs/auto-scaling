@@ -10,5 +10,5 @@ No.
 To obtain details about an AS group and the instances in the group, perform the following operations:
 
 #. Log in to the management console. Choose **Compute** > **Auto Scaling** > **Instance Scaling**.
-#. On the **AS Groups** tab page, click the name of the target AS group.
+#. On the **AS Groups** page, click the name of the target AS group.
 #. Click the **Instances** tab to view the instances in the AS group.

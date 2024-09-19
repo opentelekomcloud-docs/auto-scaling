@@ -7,6 +7,7 @@ AS Group and Instance Monitoring
 
 -  :ref:`Health Check <as_06_0101>`
 -  :ref:`Recording AS Resource Operations <as_06_0103>`
+-  :ref:`Querying Real-Time Traces <as_06_0108>`
 -  :ref:`Adding Tags to AS Groups and Instances <as_06_0104>`
 -  :ref:`Monitoring Metrics <as_06_0105>`
 -  :ref:`Viewing Monitoring Metrics <as_06_0106>`
@@ -18,6 +19,7 @@ AS Group and Instance Monitoring
 
    health_check
    recording_as_resource_operations
+   querying_real-time_traces
    adding_tags_to_as_groups_and_instances
    monitoring_metrics
    viewing_monitoring_metrics

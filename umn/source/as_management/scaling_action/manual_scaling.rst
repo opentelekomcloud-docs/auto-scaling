@@ -8,22 +8,32 @@ Manual Scaling
 Scenarios
 ---------
 
-You can manually add or remove instances to or from an AS group, or change the expected number of instances.
+You can change the size of an AS group manually. You can either add or remove instances to or from the AS group, or modify the expected number of instances of the AS group.
 
 Procedure
 ---------
 
-**Adding instances to an AS group**
+**Adding an instance to an AS group**
 
-If an AS group is enabled and has no ongoing scaling action, and the current number of instances is less than the maximum, you can manually add instances to the AS group.
+Before you add an instance to an AS group, ensure that the conditions below are met.
 
-Before adding instances to an AS group, ensure that the following conditions are met:
+.. table:: **Table 1** Conditions for manually adding an instance to an AS group
 
--  The instances are not in other AS groups.
--  The instances are in the same VPC as the AS group.
--  The instances are in the AZs used by the AS group.
--  After the instances are added, the total number of instances is less than or equal to the maximum number of instances allowed.
--  Up to 10 instances can be added at a time.
+   +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+   | Item                              | Condition                                                                                                                                   |
+   +===================================+=============================================================================================================================================+
+   | AS group                          | -  The AS group is in the **Enabled** status.                                                                                               |
+   |                                   | -  The AS group does not have ongoing scaling actions.                                                                                      |
+   |                                   | -  The number of instances to be added plus the expected number of instances cannot exceed the maximum number of instances of the AS group. |
+   +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+   | Instance                          | -  The instance to be added is not a member of another AS group.                                                                            |
+   |                                   | -  The instance is in the same VPC as the AS group.                                                                                         |
+   +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. note::
+
+   -  A maximum of 10 instances can be added to an AS group at a time.
+   -  If the AS group has an attached load balancer, the instances will be associated with the load balancer.
 
 To add instances to an AS group, perform the following steps:
 
@@ -32,27 +42,53 @@ To add instances to an AS group, perform the following steps:
 #. On the AS group details page, click the **Instances** tab and then **Add**.
 #. Select the instances to be added and click **OK**.
 
-**Removing instances from an AS group**
+**Removing an instance from an AS group**
 
-You can remove an instance from an AS group, update the instance or fix an instance fault, and add the instance back to the AS group. An instance removed from the AS group no longer carries any application traffic.
+You can remove an instance from an AS group, update the instance or fix an instance fault, and add the instance back to the AS group. After the instance is removed from the AS group, it no longer processes any application traffic.
 
-You can modify the AS configuration for an AS group at any time, but the new configuration will not be applied to any instances that are running. To apply the new configuration, stop an instance, and the system will replace it with a new one that has the specifications specified in the new configuration. You can also remove the instance from the AS group, update the instance, and add then instance back to the AS group.
+For example, you can change AS configuration for an AS group at any time. New instances will be created using the new configuration, but existing instances in the AS group are not affected. To update the existing instances, you can stop them so that they can be replaced automatically. You can also remove the instances from the AS group, update them, and then add them back to the AS group.
 
-There are some restrictions on instance removal:
+When you remove instances from an AS group, consider the restrictions below.
 
--  The AS group cannot have a scaling action in progress, the instances must be enabled, and the total number of instances after removal cannot be less than the minimum number of instances specified.
--  Instances can be removed from an AS group and deleted only if the AS group has no scaling action ongoing, and the instances are automatically created and enabled, and are not used by Storage Disaster Recovery Service (SDRS).
--  Instances manually added to an AS group can only be removed. They cannot be removed and deleted.
--  A maximum of 10 instances can be removed at a time.
+.. table:: **Table 2** Constraints on manually removing an instance from an AS group
 
-To remove an instance from an AS group, perform the following steps:
+   +-----------------------------------+-----------------------------------------------------------+
+   | Item                              | Constraint                                                |
+   +===================================+===========================================================+
+   | AS group                          | -  The AS group is in the **Enabled** status.             |
+   |                                   | -  The AS group does not have ongoing scaling actions.    |
+   +-----------------------------------+-----------------------------------------------------------+
+   | Instance                          | -  The instances are in the **Enabled** lifecycle status. |
+   |                                   | -  The instances are not used by SDRS.                    |
+   +-----------------------------------+-----------------------------------------------------------+
+
+.. note::
+
+   -  A maximum of 50 instances can be removed from to an AS group at a time.
+   -  If the number of instances you are removing decreases the number of instances in the AS group below the minimum number of instances allowed, AS launches new instances to maintain the expected capacity.
+   -  If you remove instances from an AS group that has an associated load balancer, the instances will be dissociated from the load balancer.
+
+To remove instances from an AS group, perform the following steps:
 
 #. Under **Computing**, click **Auto Scaling**. In the navigation pane on the left, choose **Instance Scaling**.
-#. Click the **AS Groups** tab and then the name of the target AS group.
-#. Click the **Instances** tab, locate the row containing the target instance, and click **Remove** or **Remove and Delete** in the **Operation** column.
-#. To delete multiple instances from an AS group, select the check boxes in front of them and click **Remove** or **Remove and Delete**.
 
-To delete all instances from an AS group, select the check box on the left of **Name** and click **Remove** or **Remove and Delete**.
+#. Click the **AS Groups** tab and then the name of the target AS group.
+
+#. Click the **Instances** tab, locate the row containing the desired instance, and click **Remove** or **Remove and Delete** in the **Operation** column.
+
+   To remove multiple instances from the AS group, select the check boxes in front of them and click **Remove** or **Remove and Delete**.
+
+   To remove all instances from the AS group, select the check box on the left of **Name** and click **Remove** or **Remove and Delete**.
+
+   .. note::
+
+      -  If the instances you want to remove were automatically added to the AS group, they are billed on a pay-per-use basis by default. You can:
+
+         -  Remove the instances from the AS group by choosing **Remove**.
+
+         -  Remove the instances from the AS group and delete them by choosing **Remove and Delete**.
+
+      -  If the instances were manually added to the AS group, they can only be removed. They cannot be removed and deleted.
 
 **Changing the expected number of instances**
 
