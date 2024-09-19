@@ -5,7 +5,7 @@
 Configuring an Instance Removal Policy
 ======================================
 
-When instances are automatically removed from your AS group, the instances that are not in the currently used AZs will be removed first. Besides, AS will check whether instances are evenly distributed in the currently used AZs. If the load among AZs is unbalanced, AS balances load among AZs when removing instances. If the load among AZs is balanced, AS removes instances following the pre-configured instance removal policy.
+When instances are automatically removed from your AS group, the instances that are not in the currently used AZs will be removed first. Then the instance removal policy you select will be applied.
 
 AS supports the following instance removal policies:
 
@@ -16,4 +16,4 @@ AS supports the following instance removal policies:
 
 .. note::
 
-   Manually added instances are the last to be removed, and if AS does remove a manually added instance, it only removes the instance. It does not delete the instance. If multiple manually added instances must be removed, AS preferentially removes the earliest-added instance first.
+   Manually added instances are the last to be removed. If AS does remove a manually added instance, it only removes the instance. It does not delete the instance. If multiple manually added instances must be removed, AS preferentially removes the earliest-added instance first.

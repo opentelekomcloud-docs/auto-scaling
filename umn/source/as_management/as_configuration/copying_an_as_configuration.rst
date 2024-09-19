@@ -19,7 +19,7 @@ Procedure
 #. Click |image1| in the upper left corner to select a region and a project.
 #. Under **Computing**, click **Auto Scaling**. In the navigation pane on the left, choose **Instance Scaling**.
 #. Click the **AS Configurations** tab, locate the row containing the target AS configuration, and click **Copy** in the **Operation** column.
-#. On the **Copy AS Configuration** page, modify parameter settings, such as **Name**, **Specifications**, and **Image**.
+#. On the **Copy AS Configuration** page, modify parameter settings, such as **Name**, **Specifications**, and **Image**, and configure the ECS login mode (key pair) based on service requirements.
 #. Click **OK**.
 
 .. |image1| image:: /_static/images/en-us_image_0210485079.png

@@ -8,7 +8,7 @@ Adding Tags to AS Groups and Instances
 Scenarios
 ---------
 
-If you have many resources of the same type, you can use a tag to manage resources flexibly. You can identify specified resources quickly using the tags allocated to them.
+If you have many resources of the same type, you can use tags to manage resources flexibly. You can identify specified resources quickly using the tags allocated to them.
 
 Using a tag, you can assign custom data to each AS group. You can organize and manage AS groups, for example, classify AS group resources by usage, owner, or environment.
 
@@ -49,10 +49,10 @@ Adding a Tag to an AS Group
       | Parameter             | Requirement                                                                                                              | Example Value         |
       +=======================+==========================================================================================================================+=======================+
       | Tag Key               | -  The value cannot be empty.                                                                                            | Organization          |
-      |                       | -  An AS group has a unique key.                                                                                         |                       |
+      |                       | -  The key must be unique to the AS group.                                                                               |                       |
       |                       | -  A key can contain a maximum of 36 characters, including only digits, letters, hyphens (-), and underscores (_).       |                       |
       +-----------------------+--------------------------------------------------------------------------------------------------------------------------+-----------------------+
-      | Tag Value             | -  The value can be an empty character string.                                                                           | Apache                |
+      | Tag Value             | -  The value is optional.                                                                                                | Apache                |
       |                       | -  A key can have only one value.                                                                                        |                       |
       |                       | -  A tag value can contain a maximum of 43 characters, including only digits, letters, hyphens (-), and underscores (_). |                       |
       +-----------------------+--------------------------------------------------------------------------------------------------------------------------+-----------------------+

@@ -8,7 +8,7 @@ Deleting an AS Group
 Scenarios
 ---------
 
-You can delete an AS group when it is no longer required.
+You can delete an AS group when it is no longer needed.
 
 -  If an AS group is not required during a specified period, you are advised to disable it but not delete it.
 -  An AS group can be deleted only when it has no instances and no scaling action is being performed.

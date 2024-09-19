@@ -15,7 +15,7 @@ To enable automatic application deployment on instances automatically added to a
 
 #. .. _as_faq_0011__li6411253193514:
 
-   Create an AS configuration. For details, :ref:`Creating an AS Configuration from a New Specifications Template <as_02_0103>`. During the creation, select the private image created in :ref:`2 <as_faq_0011__li735592116215>`.
+   Create an AS configuration. For details, :ref:`Creating an AS Configuration from Scratch <as_02_0103>`. During the creation, select the private image created in :ref:`2 <as_faq_0011__li735592116215>`.
 
 #. Go to the page that shows the details about your AS group.
 

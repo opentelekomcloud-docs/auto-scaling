@@ -27,11 +27,11 @@ If the application status or related data must be saved, you can store the infor
 
 -  AS requires authentication provided by Identity and Access Management (IAM).
 
-   The AS administrator account requires permissions of the tenant guest, ECS administrator, Cloud Eye administrator, and ELB administrator.
+   AutoScaling Administrator requires permissions of Tenant Guest, Server Administrator, CES Administrator, and ELB Administrator.
 
    .. note::
 
-      If the Cloud Eye administrator is not available, you can only use an existing alarm to create an alarm policy. If the ELB administrator is not available, you can still use existing load balancers.
+      If the CES Administrator role is not available, you cannot create alarm rules, but you can use existing alarm rules to create alarm-based scaling policies. If the ELB Administrator role is not available, you can only use existing load balancers.
 
 -  AS resources must comply with quota requirements listed in :ref:`Table 2 <as_faq_0003__table18879114515369>`.
 

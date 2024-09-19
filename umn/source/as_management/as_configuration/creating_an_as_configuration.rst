@@ -19,8 +19,8 @@ Methods
 
 -  Create an AS configuration from an existing ECS instance.
 
-   If you create an AS configuration from an existing ECS instance, the vCPU, memory, image, disk, and ECS type are the same as those of the selected instance by default. For details, see :ref:`Creating an AS Configuration from an Existing ECS Instance <as_02_0102>`.
+   If you create an AS configuration from an existing ECS instance, the vCPU, memory, image, disk, and ECS type are the same as those of the selected instance by default. For details, see :ref:`Creating an AS Configuration from an Existing ECS <as_02_0102>`.
 
 -  Create an AS configuration from a new specifications template.
 
-   If you have special requirements on the ECSs for resource expansion, use a new specifications template to create the AS configuration. For details, see :ref:`Creating an AS Configuration from a New Specifications Template <as_02_0103>`.
+   If you have special requirements on the ECSs for resource expansion, use a new specifications template to create the AS configuration. For details, see :ref:`Creating an AS Configuration from Scratch <as_02_0103>`.
