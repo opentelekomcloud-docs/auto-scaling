@@ -29,31 +29,29 @@ DELETE /autoscaling-api/v1/{project_id}/scaling_configuration/{scaling_configura
    | scaling\_ configuration \_id | Yes       | String | Specifies the AS configuration ID. For details, see :ref:`Querying AS configurations <as_06_0202>`. |
    +------------------------------+-----------+--------+-----------------------------------------------------------------------------------------------------+
 
-Request Message
+Request
+-------
+
+None
+
+Example Request
 ---------------
 
--  Request parameters
+This example deletes the AS configuration with ID **6afe46f9-7d3d-4046-8748-3b2a1085ad86**.
 
-   None
+.. code-block:: text
 
--  Example request
+   DELETE https://{Endpoint}/autoscaling-api/v1/{project_id}/scaling_configuration/6afe46f9-7d3d-4046-8748-3b2a1085ad86
 
-   This example shows how to delete the AS configuration with ID **6afe46f9-7d3d-4046-8748-3b2a1085ad86**.
+Response
+--------
 
-   .. code-block:: text
+None
 
-      DELETE https://{Endpoint}/autoscaling-api/v1/{project_id}/scaling_configuration/6afe46f9-7d3d-4046-8748-3b2a1085ad86
-
-Response Message
+Example Response
 ----------------
 
--  Response parameters
-
-   None
-
--  Example response
-
-   None
+None
 
 Returned Values
 ---------------

@@ -26,45 +26,43 @@ POST /autoscaling-api/v1/{project_id}/scaling_policy/{scaling_policy_id}/action
    scaling_policy_id Yes       String Specifies the AS policy ID.
    ================= ========= ====== ===========================
 
-Request Message
+Request
+-------
+
+.. table:: **Table 2** Request parameters
+
+   +-----------------+-----------------+-----------------+-----------------------------------------------------+
+   | Parameter       | Mandatory       | Type            | Description                                         |
+   +=================+=================+=================+=====================================================+
+   | action          | Yes             | String          | Specifies the operation for an AS policy.           |
+   |                 |                 |                 |                                                     |
+   |                 |                 |                 | -  **execute**: immediately executes the AS policy. |
+   |                 |                 |                 | -  **resume**: enables the AS group.                |
+   |                 |                 |                 | -  **pause**: disables the AS group.                |
+   +-----------------+-----------------+-----------------+-----------------------------------------------------+
+
+Example Request
 ---------------
 
--  Request parameters
+This example executes the AS policy with ID **906f73ff-56e8-41b2-a005-8157d0c60361**.
 
-   .. table:: **Table 2** Request parameters
+.. code-block:: text
 
-      +-----------------+-----------------+-----------------+-----------------------------------------------------+
-      | Parameter       | Mandatory       | Type            | Description                                         |
-      +=================+=================+=================+=====================================================+
-      | action          | Yes             | String          | Specifies the operation for an AS policy.           |
-      |                 |                 |                 |                                                     |
-      |                 |                 |                 | -  **execute**: immediately executes the AS policy. |
-      |                 |                 |                 | -  **resume**: enables the AS group.                |
-      |                 |                 |                 | -  **pause**: disables the AS group.                |
-      +-----------------+-----------------+-----------------+-----------------------------------------------------+
+   POST https://{Endpoint}/autoscaling-api/v1/{project_id}/scaling_policy/906f73ff-56e8-41b2-a005-8157d0c60361/action
 
--  Example request
+   {
+       "action": "execute"
+   }
 
-   This example shows how to immediately execute the AS policy with ID **906f73ff-56e8-41b2-a005-8157d0c60361**.
+Response
+--------
 
-   .. code-block:: text
+None
 
-      POST https://{Endpoint}/autoscaling-api/v1/{project_id}/scaling_policy/906f73ff-56e8-41b2-a005-8157d0c60361/action
-
-      {
-          "action": "execute"
-      }
-
-Response Message
+Example Response
 ----------------
 
--  Response parameters
-
-   None
-
--  Example response
-
-   None
+None
 
 Returned Values
 ---------------

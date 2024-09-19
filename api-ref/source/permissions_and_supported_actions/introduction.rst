@@ -5,9 +5,9 @@
 Introduction
 ============
 
-This section describes fine-grained permissions management for your AS resources. If your account does not need individual IAM users, you may skip this section.
+You can use Identity and Access Management (IAM) for fine-grained permissions management of your AS resources. If your account does not need individual IAM users, you can skip this section.
 
-By default, new IAM users do not have any permissions granted. You need to add a user to one or more groups, and assign policies or roles to these groups. The user then inherits permissions from the groups it is a member of. This process is called authorization. After authorization, the user can perform specified operations on AS based on the permissions.
+By default, new IAM users do not have any permissions assigned. You need to add a user to one or more groups, and assign policies or roles to these groups. The users then inherit permissions from the groups and can perform specified operations on cloud services based on the permissions.
 
 You can grant users permissions by using roles and policies. Roles: A type of coarse-grained authorization mechanism that defines permissions related to user responsibilities. Policies define API-based permissions for operations on specific resources under certain conditions, allowing for more fine-grained, secure access control of cloud resources.
 
@@ -15,7 +15,7 @@ You can grant users permissions by using roles and policies. Roles: A type of co
 
    Policy-based authorization is useful if you want to allow or deny access to an API.
 
-An account has all of the permissions required to call all APIs, but IAM users must have the required permissions specifically assigned. The permissions required for calling an API are determined by the actions supported by the API. Only users that have been granted permissions allowing the actions can call the API successfully. For example, if an IAM user wants to query AS groups using an API, the user must have been granted permissions that allow the **as:groups:list** action.
+An account has all of the permissions required to call all APIs, but IAM users must have the required permissions specifically assigned. The required permissions are determined by the actions supported by the API. Only users with the policies allowing for those actions can call the API successfully. For example, if an IAM user wants to query AS groups using an API, the user must have been granted permissions that allow the **as:groups:list** action.
 
 Supported Actions
 -----------------
@@ -23,12 +23,12 @@ Supported Actions
 Operations supported by a fine-grained policy are specific to APIs. The following describes the headers of the action tables provided in this chapter:
 
 -  Permissions: defined by actions in a custom policy.
--  APIs: REST APIs that can be called in a custom policy.
--  Actions: added to a custom policy to control permissions for specific operations.
--  Related actions: actions on which a specific action depends to take effect. When assigning permissions for the action to a user, you also need to assign permissions for the dependent actions.
--  IAM projects or enterprise projects: scope of users a permission is granted to. Policies that contain actions supporting both IAM and enterprise projects can be assigned to user groups and take effect in both IAM and Enterprise Management. Policies that only contain actions supporting IAM projects can be assigned to user groups and only take effect for IAM. Such policies will not take effect if they are assigned to user groups in Enterprise Project. Administrators can check whether an action supports IAM projects or enterprise projects in the action list. "Y" indicates that the action supports the project and "x" indicates that the action does not support the project.
+-  APIs: REST APIs that can be called by a user who has been granted specific permissions
+-  Actions: specific operations that are allowed or denied
+-  Dependencies: actions which a specific action depends on. When allowing an action for a user, you also need to allow any existing action dependencies for that user.
+-  IAM projects/Enterprise projects: the authorization scope of a custom policy. A custom policy can be applied to IAM projects or enterprise projects or both. Policies that contain actions for both IAM and enterprise projects can be used and take effect for both IAM and Enterprise Management. Policies that contain actions only for IAM projects can be used and applied to IAM only. Administrators can check whether an action supports IAM projects or enterprise projects in the action list. "Y" indicates that the action supports the project and "x" indicates that the action does not support the project.
 
-AS supports the following actions that can be defined in custom policies:
+AS supports the following actions in custom policies:
 
 -  :ref:`AS group <as_05_0202>` actions, including actions supported by all AS group APIs, such as the APIs for creating, modifying, and querying an AS group.
 -  :ref:`AS configuration <as_07_0203>` actions, including actions supported by all AS configuration APIs, such as the APIs for creating, deleting, and querying AS configurations.

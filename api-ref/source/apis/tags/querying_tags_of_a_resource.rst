@@ -29,68 +29,66 @@ GET /autoscaling-api/v1/{project_id}/{resource_type}/{resource_id}/tags
    | resource_id     | Yes             | String          | Specifies the resource ID.                                            |
    +-----------------+-----------------+-----------------+-----------------------------------------------------------------------+
 
-Request Message
+Request
+-------
+
+None
+
+Example Request
 ---------------
 
--  Request parameters
+This example queries the tags of the AS group with ID **e5d27f5c-dd76-4a61-b4bc-a67c5686719a**.
 
-   None
+.. code-block:: text
 
--  Example request
+   GET https://{Endpoint}/autoscaling-api/v1/{project_id}/scaling_group_tag/e5d27f5c-dd76-4a61-b4bc-a67c5686719a/tags
 
-   This example shows how to query the tags of the AS group with ID **e5d27f5c-dd76-4a61-b4bc-a67c5686719a**.
+Response
+--------
 
-   .. code-block:: text
+.. table:: **Table 2** Response parameters
 
-      GET https://{Endpoint}/autoscaling-api/v1/{project_id}/scaling_group_tag/e5d27f5c-dd76-4a61-b4bc-a67c5686719a/tags
+   +-----------+-----------------------------------------------------------------------+-------------------------------------------------------------------------------------------+
+   | Parameter | Type                                                                  | Description                                                                               |
+   +===========+=======================================================================+===========================================================================================+
+   | tags      | Array of :ref:`ResourceTag <as_06_1002__table64069331114716>` objects | Specifies tags. For details, see :ref:`Table 3 <as_06_1002__table64069331114716>`.        |
+   +-----------+-----------------------------------------------------------------------+-------------------------------------------------------------------------------------------+
+   | sys_tags  | Array of :ref:`ResourceTag <as_06_1002__table64069331114716>` objects | Specifies system tags. For details, see :ref:`Table 3 <as_06_1002__table64069331114716>`. |
+   +-----------+-----------------------------------------------------------------------+-------------------------------------------------------------------------------------------+
 
-Response Message
+.. _as_06_1002__table64069331114716:
+
+.. table:: **Table 3** **ResourceTag** field description
+
+   ========= ====== =========================
+   Parameter Type   Description
+   ========= ====== =========================
+   key       String Specifies the tag key.
+   value     String Specifies the tag values.
+   ========= ====== =========================
+
+Example Response
 ----------------
 
--  Response parameters
+.. code-block::
 
-   .. table:: **Table 2** Response parameters
-
-      +-----------+-----------------------------------------------------------------------+-------------------------------------------------------------------------------------------+
-      | Parameter | Type                                                                  | Description                                                                               |
-      +===========+=======================================================================+===========================================================================================+
-      | tags      | Array of :ref:`ResourceTag <as_06_1002__table64069331114716>` objects | Specifies tags. For details, see :ref:`Table 3 <as_06_1002__table64069331114716>`.        |
-      +-----------+-----------------------------------------------------------------------+-------------------------------------------------------------------------------------------+
-      | sys_tags  | Array of :ref:`ResourceTag <as_06_1002__table64069331114716>` objects | Specifies system tags. For details, see :ref:`Table 3 <as_06_1002__table64069331114716>`. |
-      +-----------+-----------------------------------------------------------------------+-------------------------------------------------------------------------------------------+
-
-   .. _as_06_1002__table64069331114716:
-
-   .. table:: **Table 3** **ResourceTag** field description
-
-      ========= ====== =========================
-      Parameter Type   Description
-      ========= ====== =========================
-      key       String Specifies the tag key.
-      value     String Specifies the tag values.
-      ========= ====== =========================
-
--  Example response
-
-   .. code-block::
-
-       {
-          "tags": [
-              {
-                  "key": "ENV15",
-                  "value": "ENV15"
-              },
-              {
-                  "key": "ENV151",
-                  "value": "ENV151"
-              },
-              {
-                  "key": "ENV152",
-                  "value": "ENV152"
-              }
-          ],
-          "sys_tags": null
-      }
+    {
+       "tags": [
+           {
+               "key": "ENV15",
+               "value": "ENV15"
+           },
+           {
+               "key": "ENV151",
+               "value": "ENV151"
+           },
+           {
+               "key": "ENV152",
+               "value": "ENV152"
+           }
+       ],
+       "sys_tags": null
+   }
 
 Returned Values
 ---------------

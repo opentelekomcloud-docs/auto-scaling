@@ -25,62 +25,60 @@ POST /autoscaling-api/v1/{project_id}/scaling_policies/action
    project_id Yes       String Specifies the project ID.
    ========== ========= ====== =========================
 
-Request Message
+Request
+-------
+
+.. table:: **Table 2** Request parameters
+
+   +-------------------+-----------------+------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+   | Parameter         | Mandatory       | Type             | Description                                                                                                                           |
+   +===================+=================+==================+=======================================================================================================================================+
+   | scaling_policy_id | Yes             | Array of strings | Specifies the AS policy ID.                                                                                                           |
+   +-------------------+-----------------+------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+   | action            | Yes             | String           | Specifies an action to be performed on AS policies in batches. The options are as follows:                                            |
+   |                   |                 |                  |                                                                                                                                       |
+   |                   |                 |                  | -  **delete**: deletes AS policies.                                                                                                   |
+   |                   |                 |                  | -  **resume**: enables AS policies.                                                                                                   |
+   |                   |                 |                  | -  **pause**: disables AS policies.                                                                                                   |
+   +-------------------+-----------------+------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+   | force_delete      | No              | String           | Specifies whether to forcibly delete an AS policy. If the value is set to **no**, in-progress AS policies cannot be deleted. Options: |
+   |                   |                 |                  |                                                                                                                                       |
+   |                   |                 |                  | -  **no** (default): indicates that the AS policy is not forcibly deleted.                                                            |
+   |                   |                 |                  | -  **yes**: indicates that the AS policy is forcibly deleted.                                                                         |
+   |                   |                 |                  |                                                                                                                                       |
+   |                   |                 |                  | This parameter is available only when **action** is set to **delete**.                                                                |
+   +-------------------+-----------------+------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+   | delete_alarm      | No              | String           | Specifies whether to delete the alarm rule used by the alarm policy. The value can be **yes** or **no** (default).                    |
+   |                   |                 |                  |                                                                                                                                       |
+   |                   |                 |                  | This parameter is available only when **action** is set to **delete**.                                                                |
+   +-------------------+-----------------+------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+
+Example Request
 ---------------
 
--  Request parameters
+This example enables the AS policies with IDs **policy_id1** and **policy_id2** in a batch.
 
-   .. table:: **Table 2** Request parameters
+.. code-block:: text
 
-      +-------------------+-----------------+------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-      | Parameter         | Mandatory       | Type             | Description                                                                                                                           |
-      +===================+=================+==================+=======================================================================================================================================+
-      | scaling_policy_id | Yes             | Array of strings | Specifies the AS policy ID.                                                                                                           |
-      +-------------------+-----------------+------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-      | action            | Yes             | String           | Specifies an action to be performed on AS policies in batches. The options are as follows:                                            |
-      |                   |                 |                  |                                                                                                                                       |
-      |                   |                 |                  | -  **delete**: deletes AS policies.                                                                                                   |
-      |                   |                 |                  | -  **resume**: enables AS policies.                                                                                                   |
-      |                   |                 |                  | -  **pause**: disables AS policies.                                                                                                   |
-      +-------------------+-----------------+------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-      | force_delete      | No              | String           | Specifies whether to forcibly delete an AS policy. If the value is set to **no**, in-progress AS policies cannot be deleted. Options: |
-      |                   |                 |                  |                                                                                                                                       |
-      |                   |                 |                  | -  **no** (default): indicates that the AS policy is not forcibly deleted.                                                            |
-      |                   |                 |                  | -  **yes**: indicates that the AS policy is forcibly deleted.                                                                         |
-      |                   |                 |                  |                                                                                                                                       |
-      |                   |                 |                  | This parameter is available only when **action** is set to **delete**.                                                                |
-      +-------------------+-----------------+------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-      | delete_alarm      | No              | String           | Specifies whether to delete the alarm rule used by the alarm policy. The value can be **yes** or **no** (default).                    |
-      |                   |                 |                  |                                                                                                                                       |
-      |                   |                 |                  | This parameter is available only when **action** is set to **delete**.                                                                |
-      +-------------------+-----------------+------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+   POST https://{Endpoint}/autoscaling-api/v1/{project_id}/scaling_policies/action
 
--  Example request
+   {
+       "action": "resume",
+       "scaling_policy_id": [
+           "policy_id1",
+           "policy_id2"
+       ]
+   }
 
-   This example shows how to enable the AS policies with IDs **policy_id1** and **policy_id2** in a batch.
+Response
+--------
 
-   .. code-block:: text
+None
 
-      POST https://{Endpoint}/autoscaling-api/v1/{project_id}/scaling_policies/action
-
-      {
-          "action": "resume",
-          "scaling_policy_id": [
-              "policy_id1",
-              "policy_id2"
-          ]
-      }
-
-Response Message
+Example Response
 ----------------
 
--  Response parameters
-
-   None
-
--  Example response
-
-   None
+None
 
 Returned Values
 ---------------

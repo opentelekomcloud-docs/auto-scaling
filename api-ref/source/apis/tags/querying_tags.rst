@@ -27,83 +27,81 @@ GET /autoscaling-api/v1/{project_id}/{resource_type}/tags
    |                 |                 |                 | **scaling_group_tag**: indicates that the resource type is AS groups. |
    +-----------------+-----------------+-----------------+-----------------------------------------------------------------------+
 
-Request Message
+Request
+-------
+
+None
+
+Example Request
 ---------------
 
--  Request parameters
+This example queries tags of AS groups in a project.
 
-   None
+.. code-block:: text
 
--  Example request
+   GET https://{Endpoint}/autoscaling-api/v1/{project_id}/scaling_group_tag/tags
 
-   This example shows how to query tags of AS groups in a project.
+Response
+--------
 
-   .. code-block:: text
+.. table:: **Table 2** Response parameters
 
-      GET https://{Endpoint}/autoscaling-api/v1/{project_id}/scaling_group_tag/tags
+   +-----------+----------------------------------------------------------------+---------------------+
+   | Parameter | Type                                                           | Description         |
+   +===========+================================================================+=====================+
+   | tags      | Array of :ref:`tags <as_06_1001__table40593624114129>` objects | Specifies the tags. |
+   +-----------+----------------------------------------------------------------+---------------------+
 
-Response Message
+.. _as_06_1001__table40593624114129:
+
+.. table:: **Table 3** **tags** field description
+
+   ========= ================ =========================
+   Parameter Type             Description
+   ========= ================ =========================
+   key       String           Specifies the tag key.
+   values    Array of strings Specifies the tag values.
+   ========= ================ =========================
+
+Example Response
 ----------------
 
--  Response parameters
+.. code-block::
 
-   .. table:: **Table 2** Response parameters
-
-      +-----------+----------------------------------------------------------------+---------------------+
-      | Parameter | Type                                                           | Description         |
-      +===========+================================================================+=====================+
-      | tags      | Array of :ref:`tags <as_06_1001__table40593624114129>` objects | Specifies the tags. |
-      +-----------+----------------------------------------------------------------+---------------------+
-
-   .. _as_06_1001__table40593624114129:
-
-   .. table:: **Table 3** **tags** field description
-
-      ========= ================ =========================
-      Parameter Type             Description
-      ========= ================ =========================
-      key       String           Specifies the tag key.
-      values    Array of strings Specifies the tag values.
-      ========= ================ =========================
-
--  Example response
-
-   .. code-block::
-
-       {
-          "tags": [
-              {
-                  "key": "ENV15",
-                  "values": [
-                      "ENV15"
-                  ]
-              },
-              {
-                  "key": "111",
-                  "values": [
-                      ""
-                  ]
-              },
-              {
-                  "key": "environment",
-                  "values": [
-                      "DEV"
-                  ]
-              },
-              {
-                  "key": "ENV151",
-                  "values": [
-                      "ENV151"
-                  ]
-              },
-              {
-                  "key": "ENV152",
-                  "values": [
-                      "ENV152"
-                  ]
-              }
-           ]
-       }
+    {
+       "tags": [
+           {
+               "key": "ENV15",
+               "values": [
+                   "ENV15"
+               ]
+           },
+           {
+               "key": "111",
+               "values": [
+                   ""
+               ]
+           },
+           {
+               "key": "environment",
+               "values": [
+                   "DEV"
+               ]
+           },
+           {
+               "key": "ENV151",
+               "values": [
+                   "ENV151"
+               ]
+           },
+           {
+               "key": "ENV152",
+               "values": [
+                   "ENV152"
+               ]
+           }
+        ]
+    }
 
 Returned Values
 ---------------

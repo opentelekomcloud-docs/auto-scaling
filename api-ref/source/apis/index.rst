@@ -12,6 +12,7 @@ APIs
 -  :ref:`AS Policy Execution Logs <as_06_0500>`
 -  :ref:`Scaling Action Logs <as_06_0600>`
 -  :ref:`Quotas <as_06_0700>`
+-  :ref:`Lifecycle Hooks <as_06_0900>`
 -  :ref:`Tags <as_06_1000>`
 -  :ref:`API Version Query <as_06_1100>`
 
@@ -26,5 +27,6 @@ APIs
    as_policy_execution_logs/index
    scaling_action_logs/index
    quotas/index
+   lifecycle_hooks/index
    tags/index
    api_version_query/index

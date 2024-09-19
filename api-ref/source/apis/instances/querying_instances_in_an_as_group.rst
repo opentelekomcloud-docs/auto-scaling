@@ -53,105 +53,103 @@ GET /autoscaling-api/v1/{project_id}/scaling_group_instance/{scaling_group_id}/l
    | limit                     | No              | Integer         | Specifies the number of query records. The default value is **20**. The value ranges from 0 to 100. |
    +---------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------------+
 
-Request Message
+Request
+-------
+
+None
+
+Example Request
 ---------------
 
--  Request parameters
+This example queries enabled, healthy instances in the AS group with ID **e5d27f5c-dd76-4a61-b4bc-a67c5686719a**.
 
-   None
+.. code-block:: text
 
--  Example request
+   GET https://{Endpoint}/autoscaling-api/v1/{project_id}/scaling_group_instance/e5d27f5c-dd76-4a61-b4bc-a67c5686719a/list?life_cycle_state=INSERVICE&health_status=NORMAL
 
-   This example shows how to query enabled, healthy instances in the AS group with ID **e5d27f5c-dd76-4a61-b4bc-a67c5686719a**.
+Response
+--------
 
-   .. code-block:: text
+.. table:: **Table 2** Response parameters
 
-      GET https://{Endpoint}/autoscaling-api/v1/{project_id}/scaling_group_instance/e5d27f5c-dd76-4a61-b4bc-a67c5686719a/list?life_cycle_state=INSERVICE&health_status=NORMAL
+   +-------------------------+----------------------------------------------------------------------------------+----------------------------------------------------------+
+   | Parameter               | Type                                                                             | Description                                              |
+   +=========================+==================================================================================+==========================================================+
+   | total_number            | Integer                                                                          | Specifies the total number of query records.             |
+   +-------------------------+----------------------------------------------------------------------------------+----------------------------------------------------------+
+   | start_number            | Integer                                                                          | Specifies the start line number.                         |
+   +-------------------------+----------------------------------------------------------------------------------+----------------------------------------------------------+
+   | limit                   | Integer                                                                          | Specifies the maximum number of resources to be queried. |
+   +-------------------------+----------------------------------------------------------------------------------+----------------------------------------------------------+
+   | scaling_group_instances | Array of :ref:`scaling_group_instances <as_06_0301__table4301093319610>` objects | Specifies details about the instances in the AS group.   |
+   +-------------------------+----------------------------------------------------------------------------------+----------------------------------------------------------+
 
-Response Message
+.. _as_06_0301__table4301093319610:
+
+.. table:: **Table 3** **scaling_group_instances** field description
+
+   +----------------------------+-----------------------+-------------------------------------------------------------------------------------------------------+
+   | Parameter                  | Type                  | Description                                                                                           |
+   +============================+=======================+=======================================================================================================+
+   | instance_id                | String                | Specifies the instance ID.                                                                            |
+   +----------------------------+-----------------------+-------------------------------------------------------------------------------------------------------+
+   | instance_name              | String                | Specifies the instance name.                                                                          |
+   +----------------------------+-----------------------+-------------------------------------------------------------------------------------------------------+
+   | scaling_group_id           | String                | Specifies the ID of the AS group to which the instance belongs.                                       |
+   +----------------------------+-----------------------+-------------------------------------------------------------------------------------------------------+
+   | scaling_group_name         | String                | Specifies the name of the AS group to which the instance belongs.                                     |
+   |                            |                       |                                                                                                       |
+   |                            |                       | Supports fuzzy search.                                                                                |
+   +----------------------------+-----------------------+-------------------------------------------------------------------------------------------------------+
+   | life_cycle_state           | String                | Specifies the instance lifecycle status in the AS group.                                              |
+   |                            |                       |                                                                                                       |
+   |                            |                       | -  **INSERVICE**: The instance is enabled.                                                            |
+   |                            |                       | -  **PENDING**: The instance is being added to the AS group.                                          |
+   |                            |                       | -  **REMOVING**: The instance is being removed from the AS group.                                     |
+   +----------------------------+-----------------------+-------------------------------------------------------------------------------------------------------+
+   | health_status              | String                | Specifies the instance health status.                                                                 |
+   |                            |                       |                                                                                                       |
+   |                            |                       | -  **INITIALIZING**: The instance is being initialized.                                               |
+   |                            |                       | -  **NORMAL**: The instance is functional.                                                            |
+   |                            |                       | -  **ERROR**: The instance is faulty.                                                                 |
+   +----------------------------+-----------------------+-------------------------------------------------------------------------------------------------------+
+   | scaling_configuration_name | String                | Specifies the AS configuration name.                                                                  |
+   +----------------------------+-----------------------+-------------------------------------------------------------------------------------------------------+
+   | scaling_configuration_id   | String                | Specifies the AS configuration ID.                                                                    |
+   |                            |                       |                                                                                                       |
+   |                            |                       | If the returned value is not empty, the instance is an ECS automatically created in a scaling action. |
+   |                            |                       |                                                                                                       |
+   |                            |                       | If the returned value is empty, the instance is an ECS manually added to the AS group.                |
+   +----------------------------+-----------------------+-------------------------------------------------------------------------------------------------------+
+   | create_time                | String                | Specifies the time when the instance is added to the AS group. The time format complies with UTC.     |
+   +----------------------------+-----------------------+-------------------------------------------------------------------------------------------------------+
+   | protect_from_scaling_down  | Boolean               | Specifies the instance protection status.                                                             |
+   +----------------------------+-----------------------+-------------------------------------------------------------------------------------------------------+
+
+Example Response
 ----------------
 
--  Response parameters
+.. code-block::
 
-   .. table:: **Table 2** Response parameters
-
-      +-------------------------+----------------------------------------------------------------------------------+----------------------------------------------------------+
-      | Parameter               | Type                                                                             | Description                                              |
-      +=========================+==================================================================================+==========================================================+
-      | total_number            | Integer                                                                          | Specifies the total number of query records.             |
-      +-------------------------+----------------------------------------------------------------------------------+----------------------------------------------------------+
-      | start_number            | Integer                                                                          | Specifies the start line number.                         |
-      +-------------------------+----------------------------------------------------------------------------------+----------------------------------------------------------+
-      | limit                   | Integer                                                                          | Specifies the maximum number of resources to be queried. |
-      +-------------------------+----------------------------------------------------------------------------------+----------------------------------------------------------+
-      | scaling_group_instances | Array of :ref:`scaling_group_instances <as_06_0301__table4301093319610>` objects | Specifies details about the instances in the AS group.   |
-      +-------------------------+----------------------------------------------------------------------------------+----------------------------------------------------------+
-
-   .. _as_06_0301__table4301093319610:
-
-   .. table:: **Table 3** **scaling_group_instances** field description
-
-      +----------------------------+-----------------------+-------------------------------------------------------------------------------------------------------+
-      | Parameter                  | Type                  | Description                                                                                           |
-      +============================+=======================+=======================================================================================================+
-      | instance_id                | String                | Specifies the instance ID.                                                                            |
-      +----------------------------+-----------------------+-------------------------------------------------------------------------------------------------------+
-      | instance_name              | String                | Specifies the instance name.                                                                          |
-      +----------------------------+-----------------------+-------------------------------------------------------------------------------------------------------+
-      | scaling_group_id           | String                | Specifies the ID of the AS group to which the instance belongs.                                       |
-      +----------------------------+-----------------------+-------------------------------------------------------------------------------------------------------+
-      | scaling_group_name         | String                | Specifies the name of the AS group to which the instance belongs.                                     |
-      |                            |                       |                                                                                                       |
-      |                            |                       | Supports fuzzy search.                                                                                |
-      +----------------------------+-----------------------+-------------------------------------------------------------------------------------------------------+
-      | life_cycle_state           | String                | Specifies the instance lifecycle status in the AS group.                                              |
-      |                            |                       |                                                                                                       |
-      |                            |                       | -  **INSERVICE**: The instance is enabled.                                                            |
-      |                            |                       | -  **PENDING**: The instance is being added to the AS group.                                          |
-      |                            |                       | -  **REMOVING**: The instance is being removed from the AS group.                                     |
-      +----------------------------+-----------------------+-------------------------------------------------------------------------------------------------------+
-      | health_status              | String                | Specifies the instance health status.                                                                 |
-      |                            |                       |                                                                                                       |
-      |                            |                       | -  **INITIALIZING**: The instance is being initialized.                                               |
-      |                            |                       | -  **NORMAL**: The instance is functional.                                                            |
-      |                            |                       | -  **ERROR**: The instance is faulty.                                                                 |
-      +----------------------------+-----------------------+-------------------------------------------------------------------------------------------------------+
-      | scaling_configuration_name | String                | Specifies the AS configuration name.                                                                  |
-      +----------------------------+-----------------------+-------------------------------------------------------------------------------------------------------+
-      | scaling_configuration_id   | String                | Specifies the AS configuration ID.                                                                    |
-      |                            |                       |                                                                                                       |
-      |                            |                       | If the returned value is not empty, the instance is an ECS automatically created in a scaling action. |
-      |                            |                       |                                                                                                       |
-      |                            |                       | If the returned value is empty, the instance is an ECS manually added to the AS group.                |
-      +----------------------------+-----------------------+-------------------------------------------------------------------------------------------------------+
-      | create_time                | String                | Specifies the time when the instance is added to the AS group. The time format complies with UTC.     |
-      +----------------------------+-----------------------+-------------------------------------------------------------------------------------------------------+
-      | protect_from_scaling_down  | Boolean               | Specifies the instance protection status.                                                             |
-      +----------------------------+-----------------------+-------------------------------------------------------------------------------------------------------+
-
--  Example response
-
-   .. code-block::
-
-      {
-          "limit": 10,
-          "total_number": 1,
-          "start_number": 0,
-          "scaling_group_instances": [
-              {
-                  "instance_id": "b25c1589-c96c-465b-9fef-d06540d1945c",
-                  "scaling_group_id": "e5d27f5c-dd76-4a61-b4bc-a67c5686719a",
-                  "scaling_group_name": "discuz",
-                  "life_cycle_state": "INSERVICE",
-                  "health_status": "NORMAL",
-                  "scaling_configuration_name": "discuz",
-                  "scaling_configuration_id": "ca3dcd84-d197-4c4f-af2a-cf8ba39696ac",
-                  "create_time": "2015-07-23T06:47:33Z",
-                  "instance_name": "discuz_3D210808",
-                  "protect_from_scaling_down": false
-              }
-          ]
-      }
+   {
+       "limit": 10,
+       "total_number": 1,
+       "start_number": 0,
+       "scaling_group_instances": [
+           {
+               "instance_id": "b25c1589-c96c-465b-9fef-d06540d1945c",
+               "scaling_group_id": "e5d27f5c-dd76-4a61-b4bc-a67c5686719a",
+               "scaling_group_name": "discuz",
+               "life_cycle_state": "INSERVICE",
+               "health_status": "NORMAL",
+               "scaling_configuration_name": "discuz",
+               "scaling_configuration_id": "ca3dcd84-d197-4c4f-af2a-cf8ba39696ac",
+               "create_time": "2015-07-23T06:47:33Z",
+               "instance_name": "discuz_3D210808",
+               "protect_from_scaling_down": false
+           }
+       ]
+   }
 
 Returned Values
 ---------------

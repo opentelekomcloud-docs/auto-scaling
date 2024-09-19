@@ -31,76 +31,72 @@ POST /autoscaling-api/v1/{project_id}/{resource_type}/{resource_id}/tags/action
    | resource_id     | Yes             | String          | Resource ID                                                           |
    +-----------------+-----------------+-----------------+-----------------------------------------------------------------------+
 
-Request Message
+Request
+-------
+
+.. table:: **Table 2** Request parameters
+
+   +-----------------+-----------------+-----------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+   | Parameter       | Mandatory       | Type                                                                  | Description                                                                                                                   |
+   +=================+=================+=======================================================================+===============================================================================================================================+
+   | tags            | Yes             | Array of :ref:`ResourceTag <as_06_1003__table64069331114716>` objects | Specifies the tag list. For details, see :ref:`Table 3 <as_06_1003__table64069331114716>`.                                    |
+   |                 |                 |                                                                       |                                                                                                                               |
+   |                 |                 |                                                                       | If **action** is set to **delete**, the tag structure cannot be missing, and the key cannot be left blank or an empty string. |
+   +-----------------+-----------------+-----------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+   | action          | Yes             | String                                                                | Specifies the operation ID. The value is case-sensitive and can be any of the following:                                      |
+   |                 |                 |                                                                       |                                                                                                                               |
+   |                 |                 |                                                                       | -  **delete**: indicates deleting a tag.                                                                                      |
+   |                 |                 |                                                                       | -  **create**: indicates creating a tag. If the same key value already exists, it will be overwritten.                        |
+   +-----------------+-----------------+-----------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+
+.. _as_06_1003__table64069331114716:
+
+.. table:: **Table 3** **ResourceTag** field description
+
+   +-----------------+-----------------+-----------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | Parameter       | Mandatory       | Type            | Description                                                                                                                                                         |
+   +=================+=================+=================+=====================================================================================================================================================================+
+   | key             | Yes             | String          | Specifies the tag key. Tag keys of a resource must be unique.                                                                                                       |
+   |                 |                 |                 |                                                                                                                                                                     |
+   |                 |                 |                 | It contains a maximum of 36 Unicode characters. It cannot be left blank. It can contain only digits, letters, hyphens (-), underscores (_), and at signs (@).       |
+   +-----------------+-----------------+-----------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | value           | No              | String          | Specifies the tag value.                                                                                                                                            |
+   |                 |                 |                 |                                                                                                                                                                     |
+   |                 |                 |                 | A tag value contains a maximum of 43 Unicode characters and can be left blank. It can contain only digits, letters, hyphens (-), underscores (_), and at signs (@). |
+   +-----------------+-----------------+-----------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Example Request
 ---------------
 
--  Request parameters
+This example adds two tags (key = **ENV15** and value = **ENV15**) and (key = **ENV151** and value = **ENV151**) to the AS group with ID **e5d27f5c-dd76-4a61-b4bc-a67c5686719a**.
 
-   .. table:: **Table 2** Request parameters
+.. code-block:: text
 
-      +-----------------+-----------------+-----------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-      | Parameter       | Mandatory       | Type                                                                  | Description                                                                                                                   |
-      +=================+=================+=======================================================================+===============================================================================================================================+
-      | tags            | Yes             | Array of :ref:`ResourceTag <as_06_1003__table64069331114716>` objects | Specifies the tag list. For details, see :ref:`Table 3 <as_06_1003__table64069331114716>`.                                    |
-      |                 |                 |                                                                       |                                                                                                                               |
-      |                 |                 |                                                                       | If **action** is set to **delete**, the tag structure cannot be missing, and the key cannot be left blank or an empty string. |
-      +-----------------+-----------------+-----------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-      | action          | Yes             | String                                                                | Specifies the operation ID. The value is case-sensitive and can be any of the following:                                      |
-      |                 |                 |                                                                       |                                                                                                                               |
-      |                 |                 |                                                                       | -  **delete**: indicates deleting a tag.                                                                                      |
-      |                 |                 |                                                                       | -  **create**: indicates creating a tag. If the same key value already exists, it will be overwritten.                        |
-      +-----------------+-----------------+-----------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+   POST https://{Endpoint}/autoscaling-api/v1/{project_id}/scaling_group_tag/e5d27f5c-dd76-4a61-b4bc-a67c5686719a/tags/action
 
-   .. _as_06_1003__table64069331114716:
+   {
+     "tags": [
+       {
+           "key": "ENV15",
+           "value": "ENV15"
+       },
+       {
+           "key": "ENV151",
+           "value": "ENV151"
+       }
+       ],
+     "action": "create"
+   }
 
-   .. table:: **Table 3** **ResourceTag** field description
+Response
+--------
 
-      +-----------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-      | Parameter       | Mandatory       | Type            | Description                                                                                                                                                                                                                                                     |
-      +=================+=================+=================+=================================================================================================================================================================================================================================================================+
-      | key             | Yes             | String          | Specifies the tag key. Tag keys of a resource must be unique.                                                                                                                                                                                                   |
-      |                 |                 |                 |                                                                                                                                                                                                                                                                 |
-      |                 |                 |                 | -  A tag key contains a maximum of 36 Unicode characters and cannot be left blank. It can contain only digits, letters, hyphens (-), underscores (_), and at signs (@).                                                                                         |
-      |                 |                 |                 | -  When **action** is set to **delete**, the tag character set is not verified, and a key contains a maximum of 127 Unicode characters.                                                                                                                         |
-      +-----------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-      | value           | No              | String          | Specifies the tag value.                                                                                                                                                                                                                                        |
-      |                 |                 |                 |                                                                                                                                                                                                                                                                 |
-      |                 |                 |                 | -  A tag value contains a maximum of 43 Unicode characters and can be left blank. It can contain only digits, letters, hyphens (-), underscores (_), and at signs (@).                                                                                          |
-      |                 |                 |                 | -  When **action** is set to **delete**, the tag character set is not verified, and a value contains a maximum of 255 Unicode characters. If **value** is specified, tags are deleted by key and value. If **value** is not specified, tags are deleted by key. |
-      +-----------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+None
 
--  Example request
-
-   This example shows how to add two tags (key = **ENV15** and value = **ENV15**) and (key = **ENV151** and value = **ENV151**) to the AS group with ID **e5d27f5c-dd76-4a61-b4bc-a67c5686719a**.
-
-   .. code-block:: text
-
-      POST https://{Endpoint}/autoscaling-api/v1/{project_id}/scaling_group_tag/e5d27f5c-dd76-4a61-b4bc-a67c5686719a/tags/action
-
-      {
-        "tags": [
-          {
-              "key": "ENV15",
-              "value": "ENV15"
-          },
-          {
-              "key": "ENV151",
-              "value": "ENV151"
-          }
-          ],
-        "action": "create"
-      }
-
-Response Message
+Example Response
 ----------------
 
--  Response parameters
-
-   None
-
--  Example response
-
-   None
+None
 
 Returned Values
 ---------------

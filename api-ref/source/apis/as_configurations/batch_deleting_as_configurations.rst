@@ -26,44 +26,42 @@ POST /autoscaling-api/v1/{project_id}/scaling_configurations
    project_id Yes       String Specifies the project ID.
    ========== ========= ====== =========================
 
-Request Message
+Request
+-------
+
+.. table:: **Table 2** Request parameters
+
+   +--------------------------+-----------+------------------+-----------------------------------------------------------------------------------------------------+
+   | Parameter                | Mandatory | Type             | Description                                                                                         |
+   +==========================+===========+==================+=====================================================================================================+
+   | scaling_configuration_id | Yes       | Array of strings | Specifies the AS configuration ID. For details, see :ref:`Querying AS configurations <as_06_0202>`. |
+   +--------------------------+-----------+------------------+-----------------------------------------------------------------------------------------------------+
+
+Example Request
 ---------------
 
--  Request parameters
+This example deletes the AS configurations with IDs **config1** and **config2** in a batch.
 
-   .. table:: **Table 2** Request parameters
+.. code-block:: text
 
-      +--------------------------+-----------+------------------+-----------------------------------------------------------------------------------------------------+
-      | Parameter                | Mandatory | Type             | Description                                                                                         |
-      +==========================+===========+==================+=====================================================================================================+
-      | scaling_configuration_id | Yes       | Array of strings | Specifies the AS configuration ID. For details, see :ref:`Querying AS configurations <as_06_0202>`. |
-      +--------------------------+-----------+------------------+-----------------------------------------------------------------------------------------------------+
+   POST https://{Endpoint}/autoscaling-api/v1/{project_id}/scaling_configurations
 
--  Example request
+   {
+       "scaling_configuration_id": [
+           "config1",
+           "config2"
+       ]
+   }
 
-   This example shows how to delete the AS configurations with IDs **config1** and **config2** in a batch.
+Response
+--------
 
-   .. code-block:: text
+None
 
-      POST https://{Endpoint}/autoscaling-api/v1/{project_id}/scaling_configurations
-
-      {
-          "scaling_configuration_id": [
-              "config1",
-              "config2"
-          ]
-      }
-
-Response Message
+Example Response
 ----------------
 
--  Response parameters
-
-   None
-
--  Example response
-
-   None
+None
 
 Returned Values
 ---------------
