@@ -8,6 +8,7 @@ Auto Scaling (AS) is a service that automatically adjusts service resources base
    :class: container-sbv
 
    .. service_card::
+      :environment: internal
       :service_type: as
       :umn: This document describes basic concepts, functions, key terms, and FAQs of the Auto Scaling (AS) service and provides instructions for quickly creating AS groups and using the AS service.
       :api-ref: This document describes application programming interfaces (APIs) of Auto Scaling (AS) and provides API parameter descriptions and example values.
