@@ -34,7 +34,7 @@ otcdocs_repo_name = 'opentelekomcloud-docs/auto-scaling'
 otcdocs_doc_environment = 'public'
 otcdocs_doc_link = '/auto-scaling/dev-guide/'
 otcdocs_doc_title = 'Developer Guide'
-otcdocs_doc_type = 'dev'
+otcdocs_doc_type = 'dev-guide'
 otcdocs_service_category = 'compute'
 otcdocs_service_title = 'Auto Scaling'
 otcdocs_service_type = 'as'
@@ -113,7 +113,8 @@ html_copy_source = False
 # -- Options for PDF output --------------------------------------------------
 latex_documents = [
     ('index',
-     'as-dev-guide.tex',u'Auto Scaling - Developer Guide',
+     'as-dev-guide.tex',
+    u'Auto Scaling - Developer Guide',
      u'OpenTelekomCloud', 'manual'),
 ]
 

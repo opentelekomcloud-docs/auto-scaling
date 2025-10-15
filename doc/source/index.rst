@@ -11,4 +11,4 @@ Auto Scaling (AS) is a service that automatically adjusts service resources base
       :service_type: as
       :umn: This document describes basic concepts, functions, key terms, and FAQs of the Auto Scaling (AS) service and provides instructions for quickly creating AS groups and using the AS service.
       :api-ref: This document describes application programming interfaces (APIs) of Auto Scaling (AS) and provides API parameter descriptions and example values.
-      :dev: This document describes how to call the APIs of Auto Scaling (AS) to use the basic functions of the service.
+      :dev-guide: This document describes how to call the APIs of Auto Scaling (AS) to use the basic functions of the service.
