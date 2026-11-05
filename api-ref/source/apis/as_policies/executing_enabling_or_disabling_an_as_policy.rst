@@ -19,12 +19,41 @@ POST /autoscaling-api/v1/{project_id}/scaling_policy/{scaling_policy_id}/action
 
 .. table:: **Table 1** Parameter description
 
-   ================= ========= ====== ===========================
-   Parameter         Mandatory Type   Description
-   ================= ========= ====== ===========================
-   project_id        Yes       String Specifies the project ID.
-   scaling_policy_id Yes       String Specifies the AS policy ID.
-   ================= ========= ====== ===========================
+   +-------------------+-----------------+-----------------+------------------------------------------------------------------------------------------------------------------------------------+
+   | Parameter         | Mandatory       | Type            | Description                                                                                                                        |
+   +===================+=================+=================+====================================================================================================================================+
+   | project_id        | Yes             | String          | **Definition**                                                                                                                     |
+   |                   |                 |                 |                                                                                                                                    |
+   |                   |                 |                 | Specifies the project ID. For details, see :ref:`Obtaining a Project ID <as_04_0106>`.                                             |
+   |                   |                 |                 |                                                                                                                                    |
+   |                   |                 |                 | **Constraints**                                                                                                                    |
+   |                   |                 |                 |                                                                                                                                    |
+   |                   |                 |                 | N/A                                                                                                                                |
+   |                   |                 |                 |                                                                                                                                    |
+   |                   |                 |                 | **Range**                                                                                                                          |
+   |                   |                 |                 |                                                                                                                                    |
+   |                   |                 |                 | N/A                                                                                                                                |
+   |                   |                 |                 |                                                                                                                                    |
+   |                   |                 |                 | **Default Value**                                                                                                                  |
+   |                   |                 |                 |                                                                                                                                    |
+   |                   |                 |                 | N/A                                                                                                                                |
+   +-------------------+-----------------+-----------------+------------------------------------------------------------------------------------------------------------------------------------+
+   | scaling_policy_id | Yes             | String          | **Definition**                                                                                                                     |
+   |                   |                 |                 |                                                                                                                                    |
+   |                   |                 |                 | Specifies the AS policy ID. For details about how to obtain it, see :ref:`Querying AS Policies Bound to an AS Group <as_06_0405>`. |
+   |                   |                 |                 |                                                                                                                                    |
+   |                   |                 |                 | **Constraints**                                                                                                                    |
+   |                   |                 |                 |                                                                                                                                    |
+   |                   |                 |                 | N/A                                                                                                                                |
+   |                   |                 |                 |                                                                                                                                    |
+   |                   |                 |                 | **Range**                                                                                                                          |
+   |                   |                 |                 |                                                                                                                                    |
+   |                   |                 |                 | N/A                                                                                                                                |
+   |                   |                 |                 |                                                                                                                                    |
+   |                   |                 |                 | **Default Value**                                                                                                                  |
+   |                   |                 |                 |                                                                                                                                    |
+   |                   |                 |                 | N/A                                                                                                                                |
+   +-------------------+-----------------+-----------------+------------------------------------------------------------------------------------------------------------------------------------+
 
 Request
 -------
@@ -34,11 +63,23 @@ Request
    +-----------------+-----------------+-----------------+-----------------------------------------------------+
    | Parameter       | Mandatory       | Type            | Description                                         |
    +=================+=================+=================+=====================================================+
-   | action          | Yes             | String          | Specifies the operation for an AS policy.           |
+   | action          | Yes             | String          | **Definition**                                      |
+   |                 |                 |                 |                                                     |
+   |                 |                 |                 | Specifies the operation for an AS policy.           |
+   |                 |                 |                 |                                                     |
+   |                 |                 |                 | **Constraints**                                     |
+   |                 |                 |                 |                                                     |
+   |                 |                 |                 | N/A                                                 |
+   |                 |                 |                 |                                                     |
+   |                 |                 |                 | **Range**                                           |
    |                 |                 |                 |                                                     |
    |                 |                 |                 | -  **execute**: immediately executes the AS policy. |
-   |                 |                 |                 | -  **resume**: enables the AS group.                |
-   |                 |                 |                 | -  **pause**: disables the AS group.                |
+   |                 |                 |                 | -  **resume**: enables the AS policy.               |
+   |                 |                 |                 | -  **pause**: disables the AS policy.               |
+   |                 |                 |                 |                                                     |
+   |                 |                 |                 | **Default Value**                                   |
+   |                 |                 |                 |                                                     |
+   |                 |                 |                 | N/A                                                 |
    +-----------------+-----------------+-----------------+-----------------------------------------------------+
 
 Example Request
