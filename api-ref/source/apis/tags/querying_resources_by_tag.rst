@@ -19,13 +19,15 @@ POST /autoscaling-api/v1/{project_id}/{resource_type}/resource_instances/action
 
 .. table:: **Table 1** Parameter description
 
-   +---------------+-----------+--------+-------------------------------------------------------------------------+
-   | Parameter     | Mandatory | Type   | Description                                                             |
-   +===============+===========+========+=========================================================================+
-   | project_id    | Yes       | String | Specifies the project ID.                                               |
-   +---------------+-----------+--------+-------------------------------------------------------------------------+
-   | resource_type | Yes       | String | Specifies the resource type. An example value is **scaling_group_tag**. |
-   +---------------+-----------+--------+-------------------------------------------------------------------------+
+   +-----------------+-----------------+-----------------+-------------------------------------------------------+
+   | Parameter       | Mandatory       | Type            | Description                                           |
+   +=================+=================+=================+=======================================================+
+   | project_id      | Yes             | String          | Specifies the project ID.                             |
+   +-----------------+-----------------+-----------------+-------------------------------------------------------+
+   | resource_type   | Yes             | String          | Specifies the resource type.                          |
+   |                 |                 |                 |                                                       |
+   |                 |                 |                 | **scaling_group_tag**: The resource type is AS group. |
+   +-----------------+-----------------+-----------------+-------------------------------------------------------+
 
 Request
 -------
@@ -73,16 +75,16 @@ Request
 
 .. table:: **Table 3** **Tag** field description
 
-   +-----------------+-----------------+------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | Parameter       | Mandatory       | Type             | Description                                                                                                                                                                                                                                                           |
-   +=================+=================+==================+=======================================================================================================================================================================================================================================================================+
-   | key             | Yes             | String           | Specifies the tag key. It contains a maximum of 36 Unicode characters. It cannot be left blank (This parameter is not verified in the search process.) A maximum of 10 keys are allowed and the key cannot be left blank or an empty string. Each key must be unique. |
-   +-----------------+-----------------+------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | values          | Yes             | Array of strings | Specifies tag values. A value contains a maximum of 43 Unicode characters. A key contains a maximum of 10 values. Each value of the same key must be unique.                                                                                                          |
-   |                 |                 |                  |                                                                                                                                                                                                                                                                       |
-   |                 |                 |                  | -  The asterisk (*) is reserved for the system. If the value starts with \*, it indicates that fuzzy match is performed for the digits following \*. The value cannot contain only asterisks (*).                                                                     |
-   |                 |                 |                  | -  If the values are null (not default), it indicates **any_value** (querying any value). The resources contain one or multiple values listed in **values** will be found and displayed.                                                                              |
-   +-----------------+-----------------+------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-----------------+-----------------+------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | Parameter       | Mandatory       | Type             | Description                                                                                                                                                                                                                                                            |
+   +=================+=================+==================+========================================================================================================================================================================================================================================================================+
+   | key             | Yes             | String           | Specifies the tag key. It contains a maximum of 36 Unicode characters. It cannot be left blank. (This parameter is not verified in the search process.) A maximum of 10 keys are allowed and the key cannot be left blank or an empty string. Each key must be unique. |
+   +-----------------+-----------------+------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | values          | Yes             | Array of strings | Specifies tag values. A value contains a maximum of 43 Unicode characters. A key contains a maximum of 10 values. Each value of the same key must be unique.                                                                                                           |
+   |                 |                 |                  |                                                                                                                                                                                                                                                                        |
+   |                 |                 |                  | -  The asterisk (*) is reserved for the system. If the value starts with \*, it indicates that fuzzy match is performed for the digits following \*. The value cannot contain only asterisks (*).                                                                      |
+   |                 |                 |                  | -  If the values are null (not default), it indicates **any_value** (querying any value). The resources contain one or multiple values listed in **values** will be found and displayed.                                                                               |
+   +-----------------+-----------------+------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. _as_06_1004__table197711657123614:
 

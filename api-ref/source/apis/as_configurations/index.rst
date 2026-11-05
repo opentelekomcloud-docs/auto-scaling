@@ -6,7 +6,7 @@ AS Configurations
 =================
 
 -  :ref:`Creating an AS Configuration <as_06_0201>`
--  :ref:`Querying AS configurations <as_06_0202>`
+-  :ref:`Querying AS Configurations <as_06_0202>`
 -  :ref:`Querying an AS Configuration <as_06_0203>`
 -  :ref:`Deleting an AS Configuration <as_06_0204>`
 -  :ref:`Batch Deleting AS Configurations <as_06_0205>`

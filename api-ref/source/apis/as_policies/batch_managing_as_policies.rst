@@ -19,39 +19,102 @@ POST /autoscaling-api/v1/{project_id}/scaling_policies/action
 
 .. table:: **Table 1** Parameter description
 
-   ========== ========= ====== =========================
-   Parameter  Mandatory Type   Description
-   ========== ========= ====== =========================
-   project_id Yes       String Specifies the project ID.
-   ========== ========= ====== =========================
+   +-----------------+-----------------+-----------------+----------------------------------------------------------------------------------------+
+   | Parameter       | Mandatory       | Type            | Description                                                                            |
+   +=================+=================+=================+========================================================================================+
+   | project_id      | Yes             | String          | **Definition**                                                                         |
+   |                 |                 |                 |                                                                                        |
+   |                 |                 |                 | Specifies the project ID. For details, see :ref:`Obtaining a Project ID <as_04_0106>`. |
+   |                 |                 |                 |                                                                                        |
+   |                 |                 |                 | **Constraints**                                                                        |
+   |                 |                 |                 |                                                                                        |
+   |                 |                 |                 | N/A                                                                                    |
+   |                 |                 |                 |                                                                                        |
+   |                 |                 |                 | **Range**                                                                              |
+   |                 |                 |                 |                                                                                        |
+   |                 |                 |                 | N/A                                                                                    |
+   |                 |                 |                 |                                                                                        |
+   |                 |                 |                 | **Default Value**                                                                      |
+   |                 |                 |                 |                                                                                        |
+   |                 |                 |                 | N/A                                                                                    |
+   +-----------------+-----------------+-----------------+----------------------------------------------------------------------------------------+
 
 Request
 -------
 
 .. table:: **Table 2** Request parameters
 
-   +-------------------+-----------------+------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-   | Parameter         | Mandatory       | Type             | Description                                                                                                                           |
-   +===================+=================+==================+=======================================================================================================================================+
-   | scaling_policy_id | Yes             | Array of strings | Specifies the AS policy ID.                                                                                                           |
-   +-------------------+-----------------+------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-   | action            | Yes             | String           | Specifies an action to be performed on AS policies in batches. The options are as follows:                                            |
-   |                   |                 |                  |                                                                                                                                       |
-   |                   |                 |                  | -  **delete**: deletes AS policies.                                                                                                   |
-   |                   |                 |                  | -  **resume**: enables AS policies.                                                                                                   |
-   |                   |                 |                  | -  **pause**: disables AS policies.                                                                                                   |
-   +-------------------+-----------------+------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-   | force_delete      | No              | String           | Specifies whether to forcibly delete an AS policy. If the value is set to **no**, in-progress AS policies cannot be deleted. Options: |
-   |                   |                 |                  |                                                                                                                                       |
-   |                   |                 |                  | -  **no** (default): indicates that the AS policy is not forcibly deleted.                                                            |
-   |                   |                 |                  | -  **yes**: indicates that the AS policy is forcibly deleted.                                                                         |
-   |                   |                 |                  |                                                                                                                                       |
-   |                   |                 |                  | This parameter is available only when **action** is set to **delete**.                                                                |
-   +-------------------+-----------------+------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-   | delete_alarm      | No              | String           | Specifies whether to delete the alarm rule used by the alarm policy. The value can be **yes** or **no** (default).                    |
-   |                   |                 |                  |                                                                                                                                       |
-   |                   |                 |                  | This parameter is available only when **action** is set to **delete**.                                                                |
-   +-------------------+-----------------+------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+   +-------------------+-----------------+------------------+------------------------------------------------------------------------------------------------------------------------------------+
+   | Parameter         | Mandatory       | Type             | Description                                                                                                                        |
+   +===================+=================+==================+====================================================================================================================================+
+   | scaling_policy_id | Yes             | Array of strings | **Definition**                                                                                                                     |
+   |                   |                 |                  |                                                                                                                                    |
+   |                   |                 |                  | Specifies the AS policy ID. For details about how to obtain it, see :ref:`Querying AS Policies Bound to an AS Group <as_06_0405>`. |
+   |                   |                 |                  |                                                                                                                                    |
+   |                   |                 |                  | **Constraints**                                                                                                                    |
+   |                   |                 |                  |                                                                                                                                    |
+   |                   |                 |                  | N/A                                                                                                                                |
+   |                   |                 |                  |                                                                                                                                    |
+   |                   |                 |                  | **Range**                                                                                                                          |
+   |                   |                 |                  |                                                                                                                                    |
+   |                   |                 |                  | N/A                                                                                                                                |
+   |                   |                 |                  |                                                                                                                                    |
+   |                   |                 |                  | **Default Value**                                                                                                                  |
+   |                   |                 |                  |                                                                                                                                    |
+   |                   |                 |                  | N/A                                                                                                                                |
+   +-------------------+-----------------+------------------+------------------------------------------------------------------------------------------------------------------------------------+
+   | action            | Yes             | String           | **Definition**                                                                                                                     |
+   |                   |                 |                  |                                                                                                                                    |
+   |                   |                 |                  | Specifies an action to be performed on AS policies in batches.                                                                     |
+   |                   |                 |                  |                                                                                                                                    |
+   |                   |                 |                  | **Constraints**                                                                                                                    |
+   |                   |                 |                  |                                                                                                                                    |
+   |                   |                 |                  | N/A                                                                                                                                |
+   |                   |                 |                  |                                                                                                                                    |
+   |                   |                 |                  | **Range**                                                                                                                          |
+   |                   |                 |                  |                                                                                                                                    |
+   |                   |                 |                  | -  **delete**: deletes AS policies.                                                                                                |
+   |                   |                 |                  | -  **resume**: enables AS policies.                                                                                                |
+   |                   |                 |                  | -  **pause**: disables AS policies.                                                                                                |
+   |                   |                 |                  |                                                                                                                                    |
+   |                   |                 |                  | **Default Value**                                                                                                                  |
+   |                   |                 |                  |                                                                                                                                    |
+   |                   |                 |                  | N/A                                                                                                                                |
+   +-------------------+-----------------+------------------+------------------------------------------------------------------------------------------------------------------------------------+
+   | force_delete      | No              | String           | **Definition**                                                                                                                     |
+   |                   |                 |                  |                                                                                                                                    |
+   |                   |                 |                  | Specifies whether to forcibly delete AS policies. If the value is set to **no**, in-progress AS policies cannot be deleted.        |
+   |                   |                 |                  |                                                                                                                                    |
+   |                   |                 |                  | **Constraints**                                                                                                                    |
+   |                   |                 |                  |                                                                                                                                    |
+   |                   |                 |                  | This parameter is available only when **action** is set to **delete**.                                                             |
+   |                   |                 |                  |                                                                                                                                    |
+   |                   |                 |                  | **Range**                                                                                                                          |
+   |                   |                 |                  |                                                                                                                                    |
+   |                   |                 |                  | -  **no** (default): indicates not to forcibly delete AS policies.                                                                 |
+   |                   |                 |                  | -  **yes**: indicates to forcibly delete AS policies.                                                                              |
+   |                   |                 |                  |                                                                                                                                    |
+   |                   |                 |                  | **Default Value**                                                                                                                  |
+   |                   |                 |                  |                                                                                                                                    |
+   |                   |                 |                  | no                                                                                                                                 |
+   +-------------------+-----------------+------------------+------------------------------------------------------------------------------------------------------------------------------------+
+   | delete_alarm      | No              | String           | **Definition**                                                                                                                     |
+   |                   |                 |                  |                                                                                                                                    |
+   |                   |                 |                  | Specifies whether to delete the alarm rule used by the alarm policy.                                                               |
+   |                   |                 |                  |                                                                                                                                    |
+   |                   |                 |                  | **Constraints**                                                                                                                    |
+   |                   |                 |                  |                                                                                                                                    |
+   |                   |                 |                  | This parameter is available only when **action** is set to **delete**.                                                             |
+   |                   |                 |                  |                                                                                                                                    |
+   |                   |                 |                  | **Range**                                                                                                                          |
+   |                   |                 |                  |                                                                                                                                    |
+   |                   |                 |                  | -  **no**: The alarm rule is not deleted.                                                                                          |
+   |                   |                 |                  | -  **yes**: The alarm rule is deleted.                                                                                             |
+   |                   |                 |                  |                                                                                                                                    |
+   |                   |                 |                  | **Default Value**                                                                                                                  |
+   |                   |                 |                  |                                                                                                                                    |
+   |                   |                 |                  | no                                                                                                                                 |
+   +-------------------+-----------------+------------------+------------------------------------------------------------------------------------------------------------------------------------+
 
 Example Request
 ---------------
