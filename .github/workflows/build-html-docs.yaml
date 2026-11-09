@@ -13,7 +13,9 @@ jobs:
           tox-env: docs
           
       - name: Upload documentation preview
-        if: ${{ github.event.pull_request.head.repo.full_name == github.repository }}
+        # success() is required: a custom if replaces the implicit success gate,
+        # so without it a failed tox run still publishes a partial docs tree.
+        if: ${{ success() && github.event.pull_request.head.repo.full_name == github.repository }}
         uses: opentelekomcloud-infra/github-actions/.github/actions/tox-upload-swift@v1
         with:
           docs_path: "doc/build/html"
