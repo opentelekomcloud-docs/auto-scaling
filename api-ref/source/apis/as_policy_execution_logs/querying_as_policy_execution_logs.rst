@@ -178,15 +178,28 @@ Response
 
 .. table:: **Table 5** **meta_data** field description
 
-   +-------------------------------+--------+-------------------------------------------------------------------------+
-   | Parameter                     | Type   | Description                                                             |
-   +===============================+========+=========================================================================+
-   | metadata_bandwidth_share_type | String | Specifies the bandwidth sharing type in the bandwidth scaling policy.   |
-   +-------------------------------+--------+-------------------------------------------------------------------------+
-   | metadata_eip_id               | String | Specifies the EIP ID for the bandwidth in the bandwidth scaling policy. |
-   +-------------------------------+--------+-------------------------------------------------------------------------+
-   | metadataeip_address           | String | Specifies the EIP for the bandwidth in the bandwidth scaling policy.    |
-   +-------------------------------+--------+-------------------------------------------------------------------------+
+   +-------------------------------+-----------------------+-------------------------------------------------------------------------+
+   | Parameter                     | Type                  | Description                                                             |
+   +===============================+=======================+=========================================================================+
+   | metadata_bandwidth_share_type | String                | **Definition**                                                          |
+   |                               |                       |                                                                         |
+   |                               |                       | Specifies the bandwidth sharing type in the bandwidth scaling policy.   |
+   |                               |                       |                                                                         |
+   |                               |                       | **Range**                                                               |
+   |                               |                       |                                                                         |
+   |                               |                       | -  **PER**: dedicated                                                   |
+   |                               |                       | -  **WHOLE**: shared                                                    |
+   +-------------------------------+-----------------------+-------------------------------------------------------------------------+
+   | metadata_eip_id               | String                | **Definition**                                                          |
+   |                               |                       |                                                                         |
+   |                               |                       | Specifies the EIP ID for the bandwidth in the bandwidth scaling policy. |
+   |                               |                       |                                                                         |
+   |                               |                       | **Range**                                                               |
+   |                               |                       |                                                                         |
+   |                               |                       | N/A                                                                     |
+   +-------------------------------+-----------------------+-------------------------------------------------------------------------+
+   | metadataeip_address           | String                | Specifies the EIP for the bandwidth in the bandwidth scaling policy.    |
+   +-------------------------------+-----------------------+-------------------------------------------------------------------------+
 
 Example Response
 ----------------

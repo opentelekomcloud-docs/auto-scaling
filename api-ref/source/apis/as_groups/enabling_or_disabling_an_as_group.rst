@@ -21,12 +21,41 @@ POST /autoscaling-api/v1/{project_id}/scaling_group/{scaling_group_id}/action
 
 .. table:: **Table 1** Parameter description
 
-   ================ ========= ====== ==========================
-   Parameter        Mandatory Type   Description
-   ================ ========= ====== ==========================
-   project_id       Yes       String Specifies the project ID.
-   scaling_group_id Yes       String Specifies the AS group ID.
-   ================ ========= ====== ==========================
+   +------------------+-----------------+-----------------+------------------------------------------------------------------------------------------------------------+
+   | Parameter        | Mandatory       | Type            | Description                                                                                                |
+   +==================+=================+=================+============================================================================================================+
+   | project_id       | Yes             | String          | **Definition**                                                                                             |
+   |                  |                 |                 |                                                                                                            |
+   |                  |                 |                 | Specifies the project ID. For details, see :ref:`Obtaining a Project ID <as_04_0106>`.                     |
+   |                  |                 |                 |                                                                                                            |
+   |                  |                 |                 | **Constraints**                                                                                            |
+   |                  |                 |                 |                                                                                                            |
+   |                  |                 |                 | N/A                                                                                                        |
+   |                  |                 |                 |                                                                                                            |
+   |                  |                 |                 | **Range**                                                                                                  |
+   |                  |                 |                 |                                                                                                            |
+   |                  |                 |                 | N/A                                                                                                        |
+   |                  |                 |                 |                                                                                                            |
+   |                  |                 |                 | **Default Value**                                                                                          |
+   |                  |                 |                 |                                                                                                            |
+   |                  |                 |                 | N/A                                                                                                        |
+   +------------------+-----------------+-----------------+------------------------------------------------------------------------------------------------------------+
+   | scaling_group_id | Yes             | String          | **Definition**                                                                                             |
+   |                  |                 |                 |                                                                                                            |
+   |                  |                 |                 | Specifies the AS group ID. For details about how to obtain it, see :ref:`Querying AS Groups <as_06_0102>`. |
+   |                  |                 |                 |                                                                                                            |
+   |                  |                 |                 | **Constraints**                                                                                            |
+   |                  |                 |                 |                                                                                                            |
+   |                  |                 |                 | N/A                                                                                                        |
+   |                  |                 |                 |                                                                                                            |
+   |                  |                 |                 | **Range**                                                                                                  |
+   |                  |                 |                 |                                                                                                            |
+   |                  |                 |                 | N/A                                                                                                        |
+   |                  |                 |                 |                                                                                                            |
+   |                  |                 |                 | **Default Value**                                                                                          |
+   |                  |                 |                 |                                                                                                            |
+   |                  |                 |                 | N/A                                                                                                        |
+   +------------------+-----------------+-----------------+------------------------------------------------------------------------------------------------------------+
 
 Request
 -------
@@ -36,10 +65,22 @@ Request
    +-----------------+-----------------+-----------------+---------------------------------------------------------+
    | Parameter       | Mandatory       | Type            | Description                                             |
    +=================+=================+=================+=========================================================+
-   | action          | Yes             | String          | Specifies a flag for enabling or disabling an AS group. |
+   | action          | Yes             | String          | **Definition**                                          |
+   |                 |                 |                 |                                                         |
+   |                 |                 |                 | Specifies a flag for enabling or disabling an AS group. |
+   |                 |                 |                 |                                                         |
+   |                 |                 |                 | **Constraints**                                         |
+   |                 |                 |                 |                                                         |
+   |                 |                 |                 | N/A                                                     |
+   |                 |                 |                 |                                                         |
+   |                 |                 |                 | **Range**                                               |
    |                 |                 |                 |                                                         |
    |                 |                 |                 | -  **resume**: enables the AS group.                    |
    |                 |                 |                 | -  **pause**: disables the AS group.                    |
+   |                 |                 |                 |                                                         |
+   |                 |                 |                 | **Default Value**                                       |
+   |                 |                 |                 |                                                         |
+   |                 |                 |                 | N/A                                                     |
    +-----------------+-----------------+-----------------+---------------------------------------------------------+
 
 Example Request

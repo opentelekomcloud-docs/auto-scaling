@@ -29,18 +29,58 @@ DELETE /autoscaling-api/v1/{project_id}/scaling_group/{scaling_group_id}
 
 .. table:: **Table 1** Parameter description
 
-   +------------------+-----------------+-----------------+---------------------------------------------------------------------------+
-   | Parameter        | Mandatory       | Type            | Description                                                               |
-   +==================+=================+=================+===========================================================================+
-   | project_id       | Yes             | String          | Specifies the project ID.                                                 |
-   +------------------+-----------------+-----------------+---------------------------------------------------------------------------+
-   | scaling_group_id | Yes             | String          | Specifies the AS group ID.                                                |
-   +------------------+-----------------+-----------------+---------------------------------------------------------------------------+
-   | force_delete     | No              | String          | Specifies whether to forcibly delete an AS group. Options:                |
-   |                  |                 |                 |                                                                           |
-   |                  |                 |                 | -  **no** (default): indicates that the AS group is not forcibly deleted. |
-   |                  |                 |                 | -  **yes**: indicates to forcibly delete an AS group.                     |
-   +------------------+-----------------+-----------------+---------------------------------------------------------------------------+
+   +------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------------------------------------+
+   | Parameter        | Mandatory       | Type            | Description                                                                                                                 |
+   +==================+=================+=================+=============================================================================================================================+
+   | project_id       | Yes             | String          | **Definition**                                                                                                              |
+   |                  |                 |                 |                                                                                                                             |
+   |                  |                 |                 | Specifies the project ID. For details, see :ref:`Obtaining a Project ID <as_04_0106>`.                                      |
+   |                  |                 |                 |                                                                                                                             |
+   |                  |                 |                 | **Constraints**                                                                                                             |
+   |                  |                 |                 |                                                                                                                             |
+   |                  |                 |                 | N/A                                                                                                                         |
+   |                  |                 |                 |                                                                                                                             |
+   |                  |                 |                 | **Range**                                                                                                                   |
+   |                  |                 |                 |                                                                                                                             |
+   |                  |                 |                 | N/A                                                                                                                         |
+   |                  |                 |                 |                                                                                                                             |
+   |                  |                 |                 | **Default Value**                                                                                                           |
+   |                  |                 |                 |                                                                                                                             |
+   |                  |                 |                 | N/A                                                                                                                         |
+   +------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------------------------------------+
+   | scaling_group_id | Yes             | String          | **Definition**                                                                                                              |
+   |                  |                 |                 |                                                                                                                             |
+   |                  |                 |                 | Specifies the AS group ID. For details about how to obtain it, see :ref:`Querying AS Groups <as_06_0102>`.                  |
+   |                  |                 |                 |                                                                                                                             |
+   |                  |                 |                 | **Constraints**                                                                                                             |
+   |                  |                 |                 |                                                                                                                             |
+   |                  |                 |                 | N/A                                                                                                                         |
+   |                  |                 |                 |                                                                                                                             |
+   |                  |                 |                 | **Range**                                                                                                                   |
+   |                  |                 |                 |                                                                                                                             |
+   |                  |                 |                 | N/A                                                                                                                         |
+   |                  |                 |                 |                                                                                                                             |
+   |                  |                 |                 | **Default Value**                                                                                                           |
+   |                  |                 |                 |                                                                                                                             |
+   |                  |                 |                 | N/A                                                                                                                         |
+   +------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------------------------------------+
+   | force_delete     | No              | String          | **Definition**                                                                                                              |
+   |                  |                 |                 |                                                                                                                             |
+   |                  |                 |                 | Specifies whether to forcibly delete an AS group.                                                                           |
+   |                  |                 |                 |                                                                                                                             |
+   |                  |                 |                 | **Constraints**                                                                                                             |
+   |                  |                 |                 |                                                                                                                             |
+   |                  |                 |                 | If the value is **no**, an AS group can be deleted only when there are no instances and no scaling actions in the AS group. |
+   |                  |                 |                 |                                                                                                                             |
+   |                  |                 |                 | **Range**                                                                                                                   |
+   |                  |                 |                 |                                                                                                                             |
+   |                  |                 |                 | -  **no**: indicates not to forcibly delete an AS group.                                                                    |
+   |                  |                 |                 | -  **yes**: indicates to forcibly delete an AS group.                                                                       |
+   |                  |                 |                 |                                                                                                                             |
+   |                  |                 |                 | **Default Value**                                                                                                           |
+   |                  |                 |                 |                                                                                                                             |
+   |                  |                 |                 | no                                                                                                                          |
+   +------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------------------------------------+
 
 Request
 -------
